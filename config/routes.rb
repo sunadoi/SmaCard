@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     collection do
       get 'top'
     end
+    resources :admins
   end
 
   resources :relations
