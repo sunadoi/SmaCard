@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="contents">
+    <% @cards.each do |card| %>
+      <%= render partial: "card", locals: { card: card } %>
+    <% end %>
+    <%# <%= paginate(@cards) %> %>
+  </div>
+</div>
