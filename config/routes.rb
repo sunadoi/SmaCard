@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "cards#top"
+  root to: "cards#index"
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
