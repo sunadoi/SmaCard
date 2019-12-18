@@ -6,8 +6,8 @@
       <%= render "users/shared/links.html.erb" %>
     </div>
     <div class="right user-form">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_for(user_resource, as: user_resource_name, url: registration_path(user_resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: user_resource %>
         <div class="field">
           <%= f.label :name, class: "label" %><br />
           <%= f.text_field :name, class: "input", autofocus: true %>

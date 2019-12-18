@@ -1,0 +1,23 @@
+<div class="content_card">
+  <div class="more">
+    <ul class="more_list">
+      <li>
+        <%= link_to '詳細', "/cards/#{card.id}", method: :get %>
+      </li>
+      <% if user_signed_in? && current_user.id == card.user_id %>
+        <li>
+          <%= link_to '編集', "/cards/#{card.id}/edit", method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', "/cards/#{card.id}", method: :delete %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%# <%= simple_format(card.point) %>
+  <span class="name">
+    <a href="">
+      <span>店名</span><%= card.admin.name %>
+    </a>
+  </span> %>
+</div>

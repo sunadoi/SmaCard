@@ -5,7 +5,7 @@
       <h5>登録しているユーザーでログイン</h5>
       <%= render "users/shared/links" %>
     </div>
-    <%= form_for(user_resource, as: user_resource_name, url: user_session_path(user_resource_name)) do |f| %>
+    <%= form_for(user_resource, as: user_resource_name, url: session_path(user_resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email, class: "label" %><br />
         <%= f.email_field :email, class: "input", autofocus: true, autocomplete: "email" %>
