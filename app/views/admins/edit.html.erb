@@ -1,0 +1,20 @@
+<% if admin_signed_in? && current_admin.id == @card.admin_id %>
+  <div class="card_edit">
+    <div class="card_info">
+      <%= @card.user_id %>
+      <%= @card.user.name %>
+      <%= @card.admin_id %>
+      <%= @card.admin.name %>
+      <%= form_with(model: @card, local: true, method: :put, class: "point-form") do |form| %>
+        <%= form.text_field :point, class: "point", placeholder: "#{@card.point}", autocomplete: "off", type: "number", min: "1", max: "20", required: true %>
+        <%= form.hidden_field :user_id, :value => @card.user_id %>
+        <%= form.hidden_field :admin_id, :value => @card.admin_id %>
+        <%= form.hidden_field :relation_id, :value => @card.relation_id %>
+        <div class="form-btn">
+          <%= form.submit "変更", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
