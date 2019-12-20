@@ -3,6 +3,11 @@
     <% @cards.each do |card| %>
       <%= render partial: "card", locals: { card: card } %>
     <% end %>
-    <%# <%= paginate(@cards) %> %>
+    <% if user_signed_in? %>
+      <p>現在のログインユーザー: <%= current_user.name %></p>
+    <% end %>
+    <% if admin_signed_in? %>
+      <p>現在のログイン管理者: <%= current_admin.name %></p>
+    <% end %>
   </div>
 </div>
