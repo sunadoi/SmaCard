@@ -15,6 +15,9 @@
     </ul>
   </div>
   <%# <%= simple_format(card.point) %>
+  <div class="qrcode">
+    <%= image_tag qrcode_tag "http://localhost:3000/cards/#{card.id}/admins/#{card.admin_id}/edit" %>
+  </div>
   <span class="name">
     <a href="">
       <span>店名</span><%= card.admin.name %>
