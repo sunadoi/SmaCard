@@ -4,7 +4,7 @@
 
 html {
   margin: 0;
-  padding:0;
+  padding: 0;
 }
 
 body {
@@ -13,10 +13,13 @@ body {
   font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", sans-serif;
   font-weight: 500;
   color: #333;
-  line-height: 2.0;
+  line-height: 2;
 }
 
-h2,h3,h4,h5 {
+h2,
+h3,
+h4,
+h5 {
   margin: 0;
   padding: 0;
 }
@@ -26,9 +29,13 @@ img {
   vertical-align: bottom;
 }
 
-ul,li,dl,dt,dd {
-  margin:0;
-  padding:0;
+ul,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -36,21 +43,21 @@ p {
   margin: 0 0 1em 0;
 }
 
-a { 
+a {
   text-decoration: none;
   color: #000;
 }
-a:hover { 
-  transition: .3s;
+a:hover {
+  transition: 0.3s;
   opacity: 0.6;
 }
 
 .content-wrapper {
-   width: 1400px;
-   margin: 0 auto;
+  width: 1400px;
+  margin: 0 auto;
 }
 
-$brown-color: #2C1E0C;
+$brown-color: #2c1e0c;
 
 header {
   width: 100%;
@@ -58,7 +65,7 @@ header {
   background-color: $brown-color;
   opacity: 0.85;
   color: white;
-  z-index: 10;
+  z-index: 0;
   .header-nav {
     height: 100px;
     display: flex;

@@ -4,6 +4,6 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :relation
+  belongs_to :relation, optional: true
   has_many :cards
 end

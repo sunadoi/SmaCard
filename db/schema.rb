@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_035410) do
+ActiveRecord::Schema.define(version: 2019_12_18_135655) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_035410) do
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "admin_id"
     t.bigint "user_id"
-    t.bigint "relatin_id"
+    t.bigint "relation_id"
     t.integer "point", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
