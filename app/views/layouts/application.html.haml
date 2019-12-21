@@ -1,0 +1,30 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title CardManagement
+    = csrf_meta_tags
+    = csp_meta_tag
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1, shrink-to-fit=no"}
+    %link{rel: "stylesheet", href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css", integrity: "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh", crossorigin: "anonymous"}
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .header
+      .header-nav
+        %h1.app-name Card_management
+        %ul.header-contents
+          %li.header-contents__content<
+            %a{ href: "/"} ユーザー名
+          %li.header-contents__content<
+            %a{ href: "#"} カード一覧
+          %li.header-contents__content<
+            %a{ href: "#"} カード検索
+          %li.header-contents__content<
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+    .main-contents
+      = render 'layouts/notifications'
+      = yield
+      %script{src: "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js", integrity: "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo", crossorigin: "anonymous"}
+      %script{src: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js", integrity: "sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6", crossorigin: "anonymous"}
+      %script{src: "https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/build/jquery.datetimepicker.full.min.js"}

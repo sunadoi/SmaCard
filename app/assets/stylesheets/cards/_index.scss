@@ -59,7 +59,7 @@ a:hover {
 
 $brown-color: #2c1e0c;
 
-header {
+.header {
   width: 100%;
   position: fixed;
   background-color: $brown-color;
@@ -79,7 +79,7 @@ header {
       display: flex;
       line-height: 100px;
       font-size: 20px;
-      .header-content {
+      &__content {
         margin-right: 50px;
         a {
           color: white;
@@ -89,69 +89,10 @@ header {
   }
 }
 
-.mainvisual {
-  position: relative;
-  height: 800px;
+.main-contents {
   padding-top: 100px;
-  img {
-    width: 100%;
-    height: 800px;
-  }
 }
 
-.menus {
-  width: 100%;
-  padding-top: 240px;
-  position: relative;
-  h1 {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-  .contents {
-    display: flex;
-    justify-content: space-between;
-    .content {
-      padding: 0 30px;
-      img {
-        height: 300px;
-        width: 400px;
-      }
-      .title {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-
-.access {
-  width: 100%;
-  padding: 120px 0;
-  h1 {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  .content {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    li {
-      display: flex;
-      width: 450px;
-      font-size: 20px;
-      .property {
-        text-align: left;
-        width: 150px;
-        padding-right: 50px;
-      }
-    }
-    #map {
-      height: 90%;
-      width: 50%;
-    }
-  }
-}
 
 footer {
   .content-wrapper {
@@ -191,5 +132,4 @@ footer {
 
 .contents {
   display: flex;
-  padding-top: 100px;
 }

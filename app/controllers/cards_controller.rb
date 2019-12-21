@@ -11,8 +11,6 @@ class CardsController < ApplicationController
 
   def update
     @card = Card.find(params[:id])
-    # @card.point = params[:card][:point]
-    # @card.save
     @card.update(card_params)
   end
 
