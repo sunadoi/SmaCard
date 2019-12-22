@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_135655) do
+ActiveRecord::Schema.define(version: 2019_12_22_134733) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -26,11 +26,31 @@ ActiveRecord::Schema.define(version: 2019_12_18_135655) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "benefits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "card_id"
+    t.text "description", null: false
+    t.datetime "expiration"
+    t.datetime "used_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "admin_id"
     t.bigint "user_id"
     t.bigint "relation_id"
     t.integer "point", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "expiration"
+    t.text "image"
+  end
+
+  create_table "coupons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "card_id"
+    t.text "description", null: false
+    t.datetime "expiration"
+    t.datetime "used_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
