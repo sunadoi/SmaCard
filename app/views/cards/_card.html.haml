@@ -1,12 +1,7 @@
 .content-card
-  %ul.content-card__list
-    - if user_signed_in? && current_user.id == card.user_id
-      %li
-      = link_to '詳細', "/cards/#{card.id}", method: :get
-      %li
-        = link_to '削除', "cards/#{card.id}/edit", method: :delete
-      .qrcode
-        = image_tag qrcode_tag "http://localhost:3000/cards/#{card.id}/admins/#{card.admin_id}/edit"
-      %span.name
-        %a{ href: "#" }
-          %span 店名: #{card.admin.name}
+  %a{ href: "/cards/#{card.id}", class: "content-card__image"}
+    = image_tag "/images/IMG_5385.jpg"
+  %ul.content-card__info
+    %li.content-card__info__name= card.relation.name
+    %li.content-card__info__point 現在のポイント: #{card.point}
+  = link_to '削除', card_path(card.id), method: :delete, class: "content-card__delete btn btn-danger"
