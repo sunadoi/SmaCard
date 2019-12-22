@@ -1,0 +1,16 @@
+.container
+  .show-contents
+    .show-contents__upper
+      .show-contents__upper__image= image_tag "/images/IMG_5385.jpg"
+      %ul.show-contents__upper__info
+        %li.show-contents__upper__name= @card.relation.name
+        %li.show-contents__upper__point 現在のポイント: #{@card.point}
+      .show-contents__upper__qrcode
+        = image_tag qrcode_tag "http://localhost:3000/cards/#{@card.id}/admins/#{@card.admin_id}/edit"
+      = link_to '削除', card_path(@card.id), method: :delete, class: "show-contents__upper__delete btn btn-danger"
+  .show-contents__lower
+    %ul.show-contents__lower__info
+      %li.show-contents__lower__info__opening 営業時間: #{@card.relation.opening_time.strftime("%H:%M")} ~ #{@card.relation.closing_time.strftime("%H:%M")}
+      %li.show-contents__lower__info__location 場所: #{@card.relation.location}
+      %li.show-contents__lower__info__tel TEL: #{@card.relation.tel}
+      %li.show-contents__lower__info__url URL: #{@card.relation.url}
