@@ -1,7 +1,0 @@
-.content-card
-  %a{ href: "/cards/#{card.id}", class: "content-card__image"}
-    = image_tag "/images/IMG_5385.jpg"
-  %ul.content-card__info
-    %li.content-card__info__name= card.relation.name
-    %li.content-card__info__point 現在のポイント: #{card.point}
-  = link_to '削除', card_path(card.id), method: :delete, class: "content-card__delete btn btn-danger"
