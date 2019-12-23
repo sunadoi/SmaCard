@@ -20,7 +20,7 @@
         店員さんがポイントを付与してくれます
       .user-contents__how-to__image= image_tag "/images/reji_kaiinsyou_smartphone.png"
     .user-contents__sign-up.btn.btn-success
-      %a{ href: "#"} 今すぐユーザー登録！
+      %a{ href: "#register"} 今すぐユーザー登録！
   .admin-contents
     %h2 店舗の方へ
     %p SmaCardでお店を活気付けませんか？
@@ -33,6 +33,6 @@
         %li ・年齢や性別など、利用した顧客の情報を取得
         &emsp;集客やマーケティングに活用できる
       .admin-contents__merit__image= image_tag "/images/graph_up.png"
-  %h2.register 登録はこちらから
+  %h2.register#register 登録はこちらから
   = link_to "ユーザーの方はこちら", new_session_path(user_resource_name), class: "btn btn-success"
   = link_to "事業主の方はこちら", new_session_path(admin_resource_name), class: "btn btn-warning"
