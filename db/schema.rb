@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_22_134733) do
+ActiveRecord::Schema.define(version: 2019_12_23_083357) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -26,13 +26,29 @@ ActiveRecord::Schema.define(version: 2019_12_22_134733) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "benefits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "card_id"
+  create_table "benefit_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "card_list_id"
     t.text "description", null: false
-    t.datetime "expiration"
-    t.datetime "used_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["card_list_id"], name: "index_benefit_lists_on_card_list_id"
+  end
+
+  create_table "benefits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "benefit_list_id"
+    t.date "used_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["benefit_list_id"], name: "index_benefits_on_benefit_list_id"
+  end
+
+  create_table "card_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "admin_id"
+    t.bigint "relation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_card_lists_on_admin_id"
+    t.index ["relation_id"], name: "index_card_lists_on_relation_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -42,17 +58,43 @@ ActiveRecord::Schema.define(version: 2019_12_22_134733) do
     t.integer "point", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "expiration"
+    t.date "expiration"
     t.text "image"
   end
 
-  create_table "coupons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "cards_benefits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "card_id"
-    t.text "description", null: false
-    t.datetime "expiration"
-    t.datetime "used_date"
+    t.bigint "benefit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["benefit_id"], name: "index_cards_benefits_on_benefit_id"
+    t.index ["card_id"], name: "index_cards_benefits_on_card_id"
+  end
+
+  create_table "cards_coupons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "card_id"
+    t.bigint "coupon_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_cards_coupons_on_card_id"
+    t.index ["coupon_id"], name: "index_cards_coupons_on_coupon_id"
+  end
+
+  create_table "coupon_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "card_list_id"
+    t.text "description", null: false
+    t.date "expiration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_list_id"], name: "index_coupon_lists_on_card_list_id"
+  end
+
+  create_table "coupons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "coupon_list_id"
+    t.date "used_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coupon_list_id"], name: "index_coupons_on_coupon_list_id"
   end
 
   create_table "relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -81,4 +123,12 @@ ActiveRecord::Schema.define(version: 2019_12_22_134733) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "benefit_lists", "card_lists"
+  add_foreign_key "card_lists", "admins"
+  add_foreign_key "card_lists", "relations"
+  add_foreign_key "cards_benefits", "benefits"
+  add_foreign_key "cards_benefits", "cards"
+  add_foreign_key "cards_coupons", "cards"
+  add_foreign_key "cards_coupons", "coupons"
+  add_foreign_key "coupon_lists", "card_lists"
 end
