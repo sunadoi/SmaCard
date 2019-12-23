@@ -1,0 +1,39 @@
+.container
+  = form_with(url: admin_card_lists_path, local: true, class: "admin-card__form") do |form|
+    = form.fields_for :relation do |relation|
+      .admin-card__form__relation
+        = relation.label :name, "店舗名"
+        = relation.text_field :name, value: "#{@relation.name}"
+        <br>
+        = relation.label :location, "住所"
+        = relation.text_field :location, value: "#{@relation.location}"
+        <br>
+        = relation.label :opening_time, "開店時間"
+        = relation.text_field :opening_time, value: "#{@relation.opening_time}"
+        <br>
+        = relation.label :closing_time, "閉店時間"
+        = relation.text_field :closing_time, value: "#{@relation.closing_time}"
+        <br>
+        = relation.label :tel, "電話番号"
+        = relation.text_field :tel, value: "#{@relation.tel}"
+        <br>
+        = relation.label :url, "URL"
+        = relation.text_field :url, value: "#{@relation.url}"
+    = form.fields_for :benefit_list do |benefit|
+      .admin-card__form__benefit
+        = benefit.label :description, "特典内容"
+        = benefit.text_field :description, value: "#{@benefit_list.description}"
+    = form.fields_for :coupon_list do |coupon|
+      .admin-card__form__coupon
+        = coupon.label :description, "クーポン内容"
+        = coupon.text_field :description, value: "#{@coupon_list.description}"
+        <br>
+        = coupon.label :expiration, "有効期限"
+        = coupon.date_field :expiration, value: "#{@coupon_list.expiration}"
+    = form.submit "登録"
+
+
+
+
+
+

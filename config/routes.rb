@@ -11,6 +11,11 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  resources :admins do
+    post 'card_lists/new' => 'card_lists#create', as: 'card_lists'
+    resources :card_lists, only: [:new, :edit, :update, :destroy]
+  end
+
   resources :cards do
     collection do
       get 'top'
@@ -18,7 +23,4 @@ Rails.application.routes.draw do
     resources :admins
   end
 
-  resources :relations
-  resources :benefits
-  resources :coupons
 end
