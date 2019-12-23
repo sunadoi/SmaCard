@@ -1,3 +1,38 @@
 .top
-  = link_to "ユーザーの方はこちら", new_session_path(user_resource_name)
-  = link_to "事業主の方はこちら", new_session_path(admin_resource_name)
+  %h1 お店のカードやクーポンを1つのアプリで
+  %h2 SmaCardはQRコードであらゆるカードのポイントを管理します
+  .user-contents
+    %h2 こんな経験ありませんか？
+    .user-contents__issue
+      %ul
+        %li ・財布の中がカードでいっぱい
+        %li ・キャッシュレス決済主体だけど、ポイントカードも持ちたい
+        %li ・ポイントカードを使おうと思ったけど、忘れてきてしまった
+      .user-contents__issue__image= image_tag "/images/money_saifu_receipt_card.png"
+    %p SmaCardならスマホであらゆるカードを一括管理できます
+    %h2 使い方は簡単！
+    .user-contents__how-to
+      %ul
+        %li ユーザー登録して、お店を探すだけ！
+        %li 事前にクーポンも見れる！！
+        <br>
+        %li あとはお店でQRコード読み取ってもらえば
+        店員さんがポイントを付与してくれます
+      .user-contents__how-to__image= image_tag "/images/reji_kaiinsyou_smartphone.png"
+    .user-contents__sign-up.btn.btn-success
+      %a{ href: "#register"} 今すぐユーザー登録！
+  .admin-contents
+    %h2 店舗の方へ
+    %p SmaCardでお店を活気付けませんか？
+    %p 簡単に登録できて以下のようなメリットがあります
+    .admin-contents__merit
+      %ul
+        %li ・紙のカードやクーポンを発行する必要がない
+        %li ・ポイント数や特典を自由に決められる
+        %li ・スマホ上でクーポンが見れるため来店率%up!
+        %li ・年齢や性別など、利用した顧客の情報を取得
+        &emsp;集客やマーケティングに活用できる
+      .admin-contents__merit__image= image_tag "/images/graph_up.png"
+  %h2.register#register 登録はこちらから
+  = link_to "ユーザーの方はこちら", new_session_path(user_resource_name), class: "btn btn-success"
+  = link_to "事業主の方はこちら", new_session_path(admin_resource_name), class: "btn btn-warning"

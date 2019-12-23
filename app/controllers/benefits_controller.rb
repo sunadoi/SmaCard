@@ -1,0 +1,2 @@
+class BenefitsController < ApplicationController
+end

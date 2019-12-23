@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   end
 
   resources :relations
+  resources :benefits
+  resources :coupons
 end

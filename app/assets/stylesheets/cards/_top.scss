@@ -1,3 +1,69 @@
 .top {
-  font-size: 30px;
+  text-align: center;
+  margin: 3% 10%;
+  h1 {
+    font-size: 3vw;
+    margin-bottom: 2%;
+  }
+  h2 {
+    font-size: 2.5vw;
+    margin-bottom: 5%;
+  }
+  p {
+    margin-bottom: 2%;
+  }
+  .user-contents {
+    font-size: 2vw;
+    ul {
+      text-align: left;
+      margin-bottom: 5%;
+    }
+    &__issue {
+      display: flex;
+      justify-content: space-around;
+      &__image {
+        height: 15%;
+        width: 15%;
+      }
+    }
+    
+    &__how-to {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      &__image {
+        height: 40%;
+        width: 40%;
+      }
+    }
+    .btn {
+      margin-top: 5%;
+      a {
+        color: white;
+      }
+    }
+  }
+  .admin-contents {
+    font-size: 2vw;
+    margin-top: 10%;
+    &__merit {
+      display: flex;
+      justify-content: space-around;
+      &__image {
+        height: 30%;
+        width: 30%;
+      }
+    }
+    ul {
+      text-align: left;
+    }
+  }
+  .register {
+    margin-top: 7%;
+  }
+  .btn {
+    color: white;
+    font-size: 2vw;
+    margin: 0 3%;
+  }
 }

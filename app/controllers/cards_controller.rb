@@ -1,4 +1,6 @@
 class CardsController < ApplicationController
+  before_action :ensure_login, except: [:top]
+
   def top
   end
 
@@ -7,6 +9,7 @@ class CardsController < ApplicationController
   end
 
   def show
+    @card = Card.find(params[:id])
   end
 
   def update
