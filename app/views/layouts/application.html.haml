@@ -14,16 +14,23 @@
       .header
         .header-nav
           %h1.app-name
-            %a{ href: "/" } SmaCard
-          %ul.header-contents
-            %li.header-contents__content<
-              %a{ href: "/cards/top"} Top
-            %li.header-contents__content<
-              %a{ href: "/cards"} カード一覧
-            %li.header-contents__content<
-              %a{ href: "#"} カード検索
-            %li.header-contents__content<
-              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+            %a{ href: "/cards/top" } SmaCard
+          -if user_signed_in?
+            %ul.header-contents
+              %li.header-contents__content<
+                %a{ href: "/cards"} カード一覧
+              %li.header-contents__content<
+                %a{ href: "#"} カード検索
+              %li.header-contents__content<
+                = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+          -if admin_signed_in?
+            %ul.header-contents
+              %li.header-contents__content<
+                %a{ href: "/cards"} ユーザー一覧
+              %li.header-contents__content<
+                %a{ href: "#"} カードの管理
+              %li.header-contents__content<
+                = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
     .main-contents
       = render 'layouts/notifications'
       = yield
