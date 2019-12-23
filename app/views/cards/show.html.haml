@@ -16,7 +16,7 @@
         - @card.benefits.each do |benefit|
           .show-contents__middle__benefits__info
             .description
-              = benefit.description
+              = benefit.benefit_list.description
             .used-date
             - if benefit.used_date
               .used-date--used
@@ -29,9 +29,9 @@
         - @card.coupons.each do |coupon|
           .show-contents__middle__coupons__info
             .description
-              = coupon.description
+              = coupon.coupon_list.description
             .expiration
-              有効期限: #{coupon.expiration.strftime("%Y/%m/%d")}
+              有効期限: #{coupon.coupon_list.expiration.strftime("%Y/%m/%d")}
             - if coupon.used_date
               .used_date--used
                 使用済
