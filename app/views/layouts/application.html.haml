@@ -10,19 +10,20 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .header
-      .header-nav
-        %h1.app-name
-          %a{ href: "/" } SmaCard
-        %ul.header-contents
-          %li.header-contents__content<
-            %a{ href: "/cards/top"} Top
-          %li.header-contents__content<
-            %a{ href: "/cards"} カード一覧
-          %li.header-contents__content<
-            %a{ href: "#"} カード検索
-          %li.header-contents__content<
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+    .container_overflow
+      .header
+        .header-nav
+          %h1.app-name
+            %a{ href: "/" } SmaCard
+          %ul.header-contents
+            %li.header-contents__content<
+              %a{ href: "/cards/top"} Top
+            %li.header-contents__content<
+              %a{ href: "/cards"} カード一覧
+            %li.header-contents__content<
+              %a{ href: "#"} カード検索
+            %li.header-contents__content<
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
     .main-contents
       = render 'layouts/notifications'
       = yield
