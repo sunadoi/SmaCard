@@ -1,9 +1,14 @@
 .container
   .new-contents
-    - @cards.each do |card|
+    - @cards.each do |card_list|
       .content-card
         = image_tag "/images/IMG_5385.jpg", class: "content-card__image"
         %ul.content-card__info
-          %li.content-card__info__name= card.benefit_lists[0].description
-          -# %li.content-card__info__benefit= relation.card_list
-        -# = link_to '削除', card_path(card.id), method: :delete, class: "content-card__delete btn btn-danger"
+          %li.content-card__info__benefit ポイント特典: #{card_list.benefit_lists[0].description}
+          %li.content-card__info__coupon クーポン: #{card_list.coupon_lists[0].description}
+        = form_with(url: user_cards_path(current_user.id), local: true, class: "admin-card__form") do |form|
+          = form.hidden_field :card_list_id, value: "#{card_list.id}"
+          = form.hidden_field :benefit_description, value: "#{card_list.benefit_lists[0].description}"
+          = form.hidden_field :coupon_description, value: "#{card_list.coupon_lists[0].description}"
+          = form.hidden_field :coupon_expiration, value: "#{card_list.coupon_lists[0].expiration}"
+          = form.submit "追加", class: "btn btn-success"
