@@ -31,4 +31,9 @@
                 = coupon.description
               .expiration
                 有効期限: #{coupon.expiration.strftime("%Y/%m/%d")}
-              .show-contents__middle__coupons--edit
+              .show-contents__middle__coupons__info--edit
+                = link_to '編集', edit_admin_card_list_coupon_list_path(@card_list.admin_id, @card_list.id, coupon.id), class: "btn btn-warning"
+              .show-contents__middle__coupons__info--destroy
+                = link_to '削除', admin_card_list_coupon_list_path(@card_list.admin_id, @card_list.id, coupon.id), method: :delete, class: "btn btn-danger"
+          .show-contents__middle__coupons__btn
+            = link_to '追加', new_admin_card_list_coupon_list_path(@card_list.admin_id, @card_list.id), class: "btn btn-success"

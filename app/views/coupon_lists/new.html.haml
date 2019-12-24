@@ -1,0 +1,14 @@
+.container
+  %h1 追加するクーポン情報を入力してください
+  = form_with(url: admin_card_list_coupon_lists_path, local: true, class: "admin-card-coupon__form") do |form|
+    .admin-card__form__coupon
+      = form.label :description, "クーポン内容"
+      = form.text_field :description, required: true
+      <br>
+      = form.label :expiration, "有効期限"
+      = form.date_field :expiration, required: true
+    = form.submit "クーポンを追加する"
+
+
+
+
