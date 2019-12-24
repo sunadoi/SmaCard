@@ -8,6 +8,10 @@ class CardsController < ApplicationController
     @cards = Card.includes(:user)
   end
 
+  def new
+    @cards = CardList.all
+  end
+
   def show
     @card = Card.find(params[:id])
   end

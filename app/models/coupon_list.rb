@@ -1,6 +1,4 @@
 class CouponList < ApplicationRecord
-  belongs_to :card_list
+  belongs_to :card_list, optional: true
   has_many :coupons
-
-  validates :description, presence: true
 end

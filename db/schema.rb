@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_083357) do
+ActiveRecord::Schema.define(version: 2019_12_24_013259) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_083357) do
 
   create_table "benefit_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "card_list_id"
-    t.text "description", null: false
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["card_list_id"], name: "index_benefit_lists_on_card_list_id"
@@ -44,11 +44,9 @@ ActiveRecord::Schema.define(version: 2019_12_23_083357) do
 
   create_table "card_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "admin_id"
-    t.bigint "relation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["admin_id"], name: "index_card_lists_on_admin_id"
-    t.index ["relation_id"], name: "index_card_lists_on_relation_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -59,7 +57,6 @@ ActiveRecord::Schema.define(version: 2019_12_23_083357) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "expiration"
-    t.text "image"
   end
 
   create_table "cards_benefits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -82,7 +79,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_083357) do
 
   create_table "coupon_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "card_list_id"
-    t.text "description", null: false
+    t.text "description"
     t.date "expiration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -98,14 +95,17 @@ ActiveRecord::Schema.define(version: 2019_12_23_083357) do
   end
 
   create_table "relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "card_list_id"
     t.string "name", null: false
     t.text "location", null: false
     t.time "opening_time", null: false
     t.time "closing_time", null: false
     t.string "tel", null: false
-    t.text "url", null: false
+    t.text "url"
+    t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["card_list_id"], name: "index_relations_on_card_list_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -125,7 +125,6 @@ ActiveRecord::Schema.define(version: 2019_12_23_083357) do
 
   add_foreign_key "benefit_lists", "card_lists"
   add_foreign_key "card_lists", "admins"
-  add_foreign_key "card_lists", "relations"
   add_foreign_key "cards_benefits", "benefits"
   add_foreign_key "cards_benefits", "cards"
   add_foreign_key "cards_coupons", "cards"

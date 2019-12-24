@@ -1,0 +1,29 @@
+.new-contents {
+  display: flex;
+  justify-content: space-around;
+  .content-card {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    margin: 2%;
+    align-items: center;
+    background-color: #e8e8e8;
+    border-radius: 1em;
+    &__image {
+      width: 30%;
+      margin-right: 20px;
+    }
+    &__info {
+      margin-right: 50px;
+      font-size: 20px;
+      li {
+        width: 100%;
+      }
+    }
+    &__delete {
+      width: 15%;
+    }
+  }
+}

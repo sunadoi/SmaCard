@@ -18,9 +18,9 @@
           -if user_signed_in?
             %ul.header-contents
               %li.header-contents__content<
-                %a{ href: "/cards"} カード一覧
+                %a{ href: "/cards"} マイカード
               %li.header-contents__content<
-                %a{ href: "#"} カード検索
+                %a{ href: "/cards/new"} カード検索
               %li.header-contents__content<
                 = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
           -if admin_signed_in?
