@@ -9,7 +9,6 @@ class CardsController < ApplicationController
   end
 
   def new
-    @relations = Relation.all
     @cards = CardList.all
   end
 
