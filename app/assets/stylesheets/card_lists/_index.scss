@@ -1,0 +1,71 @@
+.card-list {
+  .show-contents {
+    &__upper {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 2%;
+      border-bottom: dotted 1px;
+      &__image {
+        width: 20%;
+      }
+      li {
+        font-size: 1.5vw;
+      }
+      &__name {
+        font-size: 4vw;
+      }
+      &__delete {
+        width: 10%;
+        font-size: 2vw;
+      }
+    }
+    &__middle {
+      &__benefits {
+        margin: 5% 0;
+        font-size: 2vw;
+        padding: 3%;
+        border-radius: 1em;
+        background-color:#e8e8e8;
+        h2 {
+          margin-bottom: 2%;
+        }
+        &__info {
+          display: flex;
+          .description {
+            width: 90%;
+          }
+        }
+      }
+      &__coupons {
+        font-size: 2vw;
+        padding: 3%;
+        border-radius: 1em;
+        background-color:#e8e8e8;
+        h2 {
+          margin-bottom: 2%;
+        }
+        &__info {
+          display: flex;
+          justify-content: space-between;
+          .description {
+            width: 50%;
+          }
+        }
+      }
+    }
+    &__lower {
+      border-top: dotted 1px;
+      margin-top: 5%;
+      &__info {
+        align-items: center;
+        margin: 3%;
+        font-size: 2vw;
+        li {
+          margin-top: 2%;
+        }
+      }
+    }
+  }
+  
+}
