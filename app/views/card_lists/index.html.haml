@@ -9,7 +9,8 @@
           %li.show-contents__upper__opening 営業時間: #{@card_list.relation.opening_time.strftime("%H:%M")} ~ #{@card_list.relation.closing_time.strftime("%H:%M")}
           %li.show-contents__upper__tel TEL: #{@card_list.relation.tel}
           %li.show-contents__upper__location URL: #{@card_list.relation.url}
-        = link_to '削除', admin_card_list_path(@card_list.admin_id, @card_list.id), method: :delete, class: "show-contents__upper__delete btn btn-danger"
+        = link_to '編集', edit_admin_card_list_relation_path(current_admin.id, @card_list.id, @card_list.relation.id), class: "show-contents__upper__edit btn btn-warning"
+        = link_to '削除', admin_card_list_path(current_admin.id, @card_list.id), method: :delete, class: "show-contents__upper__delete btn btn-danger"
       .show-contents__middle
         .show-contents__middle__benefits
           %h2 ポイント特典

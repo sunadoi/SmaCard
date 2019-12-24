@@ -9,10 +9,10 @@
         = relation.text_field :location, value: "#{@relation.try(:location)}"
         <br>
         = relation.label :opening_time, "開店時間"
-        = relation.text_field :opening_time, value: "#{@relation.try(:opening_time).try(:strftime, "%H:%M")}"
+        = relation.time_field :opening_time, value: "#{@relation.try(:opening_time).try(:strftime, "%H:%M")}"
         <br>
         = relation.label :closing_time, "閉店時間"
-        = relation.text_field :closing_time, value: "#{@relation.try(:closing_time).try(:strftime, "%H:%M")}"
+        = relation.time_field :closing_time, value: "#{@relation.try(:closing_time).try(:strftime, "%H:%M")}"
         <br>
         = relation.label :tel, "電話番号"
         = relation.text_field :tel, value: "#{@relation.try(:tel)}"
