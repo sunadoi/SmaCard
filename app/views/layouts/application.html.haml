@@ -26,7 +26,7 @@
           -if admin_signed_in?
             %ul.header-contents
               %li.header-contents__content<
-                %a{ href: "/cards"} ユーザー一覧
+                = link_to "カード情報", admin_card_list_index_path(current_admin.id), class: 'btn'
               %li.header-contents__content<
                 = link_to "カードの作成", new_admin_card_list_path(current_admin.id), class: 'btn'
               %li.header-contents__content<

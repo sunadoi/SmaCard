@@ -12,11 +12,12 @@ Rails.application.routes.draw do
   }
 
   resources :admins do
+    get 'card_lists' => 'card_lists#index', as: 'card_list_index'
     post 'card_lists/new' => 'card_lists#create', as: 'card_lists'
     resources :card_lists, only: [:new, :edit, :update, :destroy] do
       resources :relations, only: [:edit, :update]
-      resources :benefit_lists, only: [:new, :edit, :update, :destroy]
-      resources :coupon_lists, only: [:new, :edit, :update, :destroy]
+      resources :benefit_lists, only: [:new, :create, :edit, :update, :destroy]
+      resources :coupon_lists, only: [:new, :create, :edit, :update, :destroy]
     end
   end
 
