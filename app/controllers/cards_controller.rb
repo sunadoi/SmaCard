@@ -8,6 +8,11 @@ class CardsController < ApplicationController
     @cards = Card.includes(:user)
   end
 
+  def new
+    @relations = Relation.all
+    @cards = CardList.all
+  end
+
   def show
     @card = Card.find(params[:id])
   end
