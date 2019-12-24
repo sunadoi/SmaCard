@@ -8,6 +8,6 @@
           %ul.content-card__info
             %li.content-card__info__name= card.relation.name
             %li.content-card__info__point 現在のポイント: #{card.point}
-          = link_to '削除', card_path(card.id), method: :delete, class: "content-card__delete btn btn-danger"
+          = link_to '削除', user_card_path(current_user.id, card.id), method: :delete, class: "content-card__delete btn btn-danger"
   - if admin_signed_in?
     .index-contents

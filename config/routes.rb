@@ -21,11 +21,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users do
+    resources :cards
+  end
+
   resources :cards do
     collection do
       get 'top'
     end
-    resources :admins
   end
 
 end
