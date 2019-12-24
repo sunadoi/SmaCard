@@ -25,10 +25,12 @@
                 = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
           -if admin_signed_in?
             %ul.header-contents
-              %li.header-contents__content<
-                = link_to "カード情報", admin_card_list_index_path(current_admin.id), class: 'btn'
-              %li.header-contents__content<
-                = link_to "カードの作成", new_admin_card_list_path(current_admin.id), class: 'btn'
+              - if current_admin.card_list
+                %li.header-contents__content<
+                  = link_to "カード情報", admin_card_list_index_path(current_admin.id), class: 'btn'
+              -else 
+                %li.header-contents__content<
+                  = link_to "カードの作成", new_admin_card_list_path(current_admin.id), class: 'btn'
               %li.header-contents__content<
                 = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
     .main-contents
