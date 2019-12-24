@@ -1,4 +1,8 @@
 class CardListsController < ApplicationController
+  def index
+    @card_list = CardList.find_by(admin_id: current_admin.id)
+  end
+
   def new
     @card_list = CardList.new
     @relation = Relation.new
