@@ -1,0 +1,7 @@
+.container
+  %h1 特典情報を変更してください
+  = form_with(url: admin_card_list_benefit_list_path(current_admin.id, @benefit_list.card_list.id, @benefit_list.id), method: :put, local: true, class: "admin-card-benefit__form") do |form|
+    .admin-card__form__benefit
+      = form.label :description, "特典内容"
+      = form.text_field :description, value: "#{@benefit_list.description}", required: true
+    = form.submit "特典内容を変更する"
