@@ -1,6 +1,4 @@
 class BenefitList < ApplicationRecord
-  belongs_to :card_list
+  belongs_to :card_list, optional: true
   has_many :benefits
-
-  validates :description, presence: true
 end
