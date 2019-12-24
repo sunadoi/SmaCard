@@ -1,0 +1,9 @@
+.container
+  .new-contents
+    - @cards.each do |card|
+      .content-card
+        = image_tag "/images/IMG_5385.jpg", class: "content-card__image"
+        %ul.content-card__info
+          %li.content-card__info__name= card.benefit_lists[0].description
+          -# %li.content-card__info__benefit= relation.card_list
+        -# = link_to '削除', card_path(card.id), method: :delete, class: "content-card__delete btn btn-danger"
