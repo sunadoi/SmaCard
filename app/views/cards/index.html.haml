@@ -3,7 +3,7 @@
     - @cards.each do |card|
       - if user_signed_in? && current_user.id == card.user_id
         .content-card
-          %a{ href: "/cards/#{card.id}", class: "content-card__image"}
+          = link_to user_card_path(current_user.id, card.id), class: "content-card__image" do
             = image_tag "/images/IMG_5385.jpg"
           %ul.content-card__info
             %li.content-card__info__name= card.relation.name
