@@ -54,6 +54,10 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
   end
 
+  def edit
+    @card = Card.find(params[:id])
+  end
+
   def update
     @card = Card.find(params[:id])
     @card.update(card_params)
@@ -69,7 +73,7 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:point, :user_id, :admin_id, :relation_id)
+    params.permit(:point, :user_id, :admin_id, :relation_id)
   end
 
   def benefit_params
