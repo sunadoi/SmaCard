@@ -7,6 +7,11 @@ class CouponListsController < ApplicationController
 
   def create
     @coupon_list = CouponList.create(coupon_list_params)
+    @coupon = Coupon.create(coupon_list_id: @coupon_list.id)
+    @cards = Card.where(card_list_id: @coupon_list.card_list_id)
+    @cards.each do |card|
+      @cards_coupons = CardsCoupon.create(card_id: card.id, coupon_id: @coupon.id)
+    end
     flash[:notice] = "特典を追加しました"
     redirect_to admin_card_list_index_path(current_admin.id)
   end

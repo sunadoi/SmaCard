@@ -1,4 +1,4 @@
 class CardsCoupon < ApplicationRecord
   belongs_to :card
-  belongs_to :coupon
+  belongs_to :coupon, dependent: :delete
 end

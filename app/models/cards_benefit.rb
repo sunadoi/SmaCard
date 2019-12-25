@@ -1,4 +1,4 @@
 class CardsBenefit < ApplicationRecord
   belongs_to :card
-  belongs_to :benefit
+  belongs_to :benefit, dependent: :delete
 end
