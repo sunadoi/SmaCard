@@ -1,7 +1,15 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
+  before_action :admin_login?
   # before_action :configure_sign_in_params, only: [:create]
+
+  def admin_login?
+    if current_admin
+      flash[:alert] = "ユーザーとしてログインするためには、ログイン中の管理者をログアウトしてください"
+      redirect_to admin_card_list_index_path(current_admin.id)
+    end
+  end
 
   # GET /resource/sign_in
   # def new
