@@ -23,7 +23,7 @@
                 = link_to "カード一覧検索", new_user_card_path(current_user.id), class: 'btn'
               %li.header-contents__content<
                 = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
-          -if admin_signed_in?
+          -elsif admin_signed_in?
             %ul.header-contents
               - if current_admin.card_list
                 %li.header-contents__content<
@@ -33,6 +33,12 @@
                   = link_to "カードの作成", new_admin_card_list_path(current_admin.id), class: 'btn'
               %li.header-contents__content<
                 = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+          -else
+            %ul.header-contents
+              %li.header-contents__content<
+                = link_to "ユーザーログイン", new_user_session_path, class: 'btn'
+              %li.header-contents__content<
+                = link_to "管理者ログイン", new_admin_session_path, class: 'btn'
     .main-contents
       = render 'layouts/notifications'
       = yield
