@@ -1,0 +1,14 @@
+.show-contents {
+  &__upper {
+    padding-bottom: 2%;
+    li {
+      font-size: 1.5vw;
+    }
+    &__name {
+      font-size: 4vw;
+    }
+  }
+  &__middle {
+    margin-bottom: 10%;
+  }
+}
