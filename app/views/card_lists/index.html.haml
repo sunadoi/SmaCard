@@ -31,7 +31,7 @@
               .description
                 = coupon.description
               .expiration
-                有効期限: #{coupon.expiration.strftime("%Y/%m/%d")}
+                有効期限: #{coupon.expiration.try(:strftime, "%Y/%m/%d")}
               .show-contents__middle__coupons__info--edit
                 = link_to '編集', edit_admin_card_list_coupon_list_path(@card_list.admin_id, @card_list.id, coupon.id), class: "btn btn-warning"
               .show-contents__middle__coupons__info--destroy
