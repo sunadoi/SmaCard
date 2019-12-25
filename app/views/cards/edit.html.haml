@@ -6,7 +6,7 @@
         = @card.user.name
         %p 管理者id: #{@card.admin_id}
         = @card.admin.name
-        = form_with(model: @card, local: true, method: :put, class: "point-form") do |form|
+        = form_with(url: user_card_path(@card.user_id, @card.id), local: true, method: :put, class: "point-form") do |form|
           = form.text_field :point, class: "point", placeholder: "#{@card.point}", autocomplete: "off", type: "number", min: "1", max: "20", required: true
           = form.hidden_field :user_id, :value => @card.user_id
           = form.hidden_field :admin_id, :value => @card.admin_id
