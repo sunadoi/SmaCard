@@ -1,4 +1,6 @@
 class CardListsController < ApplicationController
+  before_action :admin_card_list_has?, only: [:index]
+
   def index
     @card_list = CardList.find_by(admin_id: current_admin.id)
   end
@@ -53,6 +55,12 @@ class CardListsController < ApplicationController
 
   def coupon_params
     params.require(:coupon_list).permit(:description, :expiration).merge(card_list_id: @card_list.id)
+  end
+
+  def admin_card_list_has?
+    unless current_admin.card_list
+      redirect_to new_admin_card_list_path(current_admin.id)
+    end
   end
 
 end
