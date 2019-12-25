@@ -5,39 +5,41 @@
       %ul.show-contents__upper__info
         %li.show-contents__upper__name= @card.relation.name
         %li.show-contents__upper__point 現在のポイント: #{@card.point}
-        - if @card.expiration
+        - if @card.expiration.present?
           %li.show-contents__upper__expiration 有効期限: #{@card.expiration.strftime("%Y/%m/%d")}
       .show-contents__upper__qrcode
         = image_tag qrcode_tag "http://localhost:3000/cards/#{@card.id}/admins/#{@card.admin_id}/edit"
       = link_to '削除', card_path(@card.id), method: :delete, class: "show-contents__upper__delete btn btn-danger"
     .show-contents__middle
-      .show-contents__middle__benefits
-        %h2 ポイント特典
-        - @card.benefits.each do |benefit|
-          .show-contents__middle__benefits__info
-            .description
-              = benefit.benefit_list.description
-            .used-date
-            - if benefit.used_date
-              .used-date--used
-                使用済
-            - else
-              .used-date--unused
-                未使用
-      .show-contents__middle__coupons
-        %h2 クーポン
-        - @card.coupons.each do |coupon|
-          .show-contents__middle__coupons__info
-            .description
-              = coupon.coupon_list.description
-            .expiration
-              有効期限: #{coupon.coupon_list.expiration.strftime("%Y/%m/%d")}
-            - if coupon.used_date
-              .used_date--used
-                使用済
-            - else
-              .used_date--unused
-                未使用
+      - if @card.benefits.present?
+        .show-contents__middle__benefits
+          %h2 ポイント特典
+          - @card.benefits.each do |benefit|
+            .show-contents__middle__benefits__info
+              .description
+                = benefit.benefit_list.description
+              .used-date
+              - if benefit.used_date
+                .used-date--used
+                  使用済
+              - else
+                .used-date--unused
+                  未使用
+      - if @card.coupons.present?
+        .show-contents__middle__coupons
+          %h2 クーポン
+          - @card.coupons.each do |coupon|
+            .show-contents__middle__coupons__info
+              .description
+                = coupon.coupon_list.try(:description)
+              .expiration
+                有効期限: #{coupon.coupon_list.try(:expiration).try(:strftime, "%Y/%m/%d")}
+              - if coupon.used_date
+                .used_date--used
+                  使用済
+              - else
+                .used_date--unused
+                  未使用
     .show-contents__lower
       %ul.show-contents__lower__info
         %li.show-contents__lower__info__opening 営業時間: #{@card.relation.opening_time.strftime("%H:%M")} ~ #{@card.relation.closing_time.strftime("%H:%M")}
