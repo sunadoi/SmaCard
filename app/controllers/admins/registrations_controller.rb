@@ -1,9 +1,16 @@
 # frozen_string_literal: true
 
 class Admins::RegistrationsController < Devise::RegistrationsController
+  before_action :user_login?
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
+  def user_login?
+    if current_user
+      flash[:alert] = "管理者登録をするためには、ログイン中のユーザーをログアウトしてください"
+      redirect_to user_cards_path(current_user.id)
+    end
+  end
   # GET /resource/sign_up
   # def new
   #   super
