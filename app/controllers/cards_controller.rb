@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :ensure_login, except: [:top]
+  before_action :set_card, only: [:show, :edit, :update, :destroy]
 
   def top
   end
@@ -51,26 +52,30 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = Card.find(params[:id])
   end
 
   def edit
-    @card = Card.find(params[:id])
   end
 
   def update
-    @card = Card.find(params[:id])
     @card.update(card_params)
   end
 
   def destroy
-    @card = Card.find(params[:id])
     @card.destroy
     flash[:alert] = "カードを削除しました"
     redirect_to action: :index
   end
 
+  def search
+    @cards = Card.search(params[:keyword])
+  end
+
   private
+
+  def set_card
+    @card = Card.find(params[:id])
+  end
 
   def card_params
     params.permit(:point, :user_id, :admin_id, :relation_id)
