@@ -1,0 +1,26 @@
+.container
+  .show-contents
+    .show-contents__upper
+      .show-contents__upper__image= image_tag "/images/IMG_5385.jpg"
+      %h2.show-contents__upper__name= @card_list.relation.name
+      %ul.show-contents__upper__info
+        %li.show-contents__upper__location 住所: #{@card_list.relation.location}
+        %li.show-contents__upper__opening 営業時間: #{@card_list.relation.opening_time.strftime("%H:%M")} ~ #{@card_list.relation.closing_time.strftime("%H:%M")}
+        %li.show-contents__upper__tel TEL: #{@card_list.relation.tel}
+        %li.show-contents__upper__location URL: #{@card_list.relation.url}
+      = link_to '追加', user_cards_path(current_user.id), class: "show-contents__upper__add btn btn-success"
+    .show-contents__middle
+      .show-contents__middle__benefits
+        %h2 ポイント特典
+        - @card_list.benefit_lists.each do |benefit|
+          .show-contents__middle__benefits__info
+            .description
+              = benefit.description
+      .show-contents__middle__coupons
+        %h2 クーポン
+        - @card_list.coupon_lists.each do |coupon|
+          .show-contents__middle__coupons__info
+            .description
+              = coupon.description
+            .expiration
+              有効期限: #{coupon.expiration.try(:strftime, "%Y/%m/%d")}
