@@ -4,11 +4,17 @@
       .content-card
         = image_tag "/images/IMG_5385.jpg", class: "content-card__image"
         %ul.content-card__info
-          %li.content-card__info__benefit ポイント特典: #{card_list.benefit_lists[0].description}
-          %li.content-card__info__coupon クーポン: #{card_list.coupon_lists[0].description}
+          - if card_list.benefit_lists.present?
+            %li.content-card__info__benefit ポイント特典: #{card_list.benefit_lists[0].description}
+          - if card_list.coupon_lists.present?
+            %li.content-card__info__coupon クーポン: #{card_list.coupon_lists[0].description}
         = form_with(url: user_cards_path(current_user.id), local: true, class: "admin-card__form") do |form|
           = form.hidden_field :card_list_id, value: "#{card_list.id}"
           - card_list.benefit_lists.each do |benefit_list|
             = fields_for "benefit_lists[]", benefit_list do |field|
               = field.hidden_field :benefit_description, value: "#{benefit_list.description}"
+          - card_list.coupon_lists.each do |coupon_list|
+            = fields_for "coupon_lists[]", coupon_list do |field|
+              = field.hidden_field :coupon_description, value: "#{coupon_list.description}"
+              = field.hidden_field :expiration, value: "#{coupon_list.expiration}"
           = form.submit "追加", class: "btn btn-success"
