@@ -34,5 +34,5 @@
         &emsp;集客やマーケティングに活用できる
       .admin-contents__merit__image= image_tag "/images/graph_up.png"
   %h2.register#register 登録はこちらから
-  = link_to "ユーザーの方はこちら", new_session_path(user_resource_name), class: "btn btn-success"
-  = link_to "事業主の方はこちら", new_session_path(admin_resource_name), class: "btn btn-warning"
+  = link_to "ユーザーの方はこちら", new_user_registration_path, class: "btn btn-success"
+  = link_to "事業主の方はこちら", new_admin_registration_path, class: "btn btn-warning"
