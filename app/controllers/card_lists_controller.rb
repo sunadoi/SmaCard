@@ -30,6 +30,13 @@ class CardListsController < ApplicationController
     end
   end
 
+  def destroy
+    @card_list = CardList.find(params[:id].to_i)
+    @card_list.destroy
+    flash[:alert] = "カードを削除しました"
+    redirect_to action: :new
+  end
+
   private
 
   def relation_params
