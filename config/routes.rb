@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   resources :cards, only: [] do
     collection do
       get 'top'
+      get 'search'
     end
   end
 
