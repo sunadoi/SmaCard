@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   }
 
   resources :admins do
+    resources :cards, only: [:edit]
     get 'card_lists' => 'card_lists#index', as: 'card_list_index'
     post 'card_lists/new' => 'card_lists#create', as: 'card_lists'
     resources :card_lists, only: [:new, :edit, :update, :destroy] do
