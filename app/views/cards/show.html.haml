@@ -8,7 +8,7 @@
         - if @card.expiration.present?
           %li.show-contents__upper__expiration 有効期限: #{@card.expiration.strftime("%Y/%m/%d")}
       .show-contents__upper__qrcode
-        = image_tag qrcode_tag "http://localhost:3000/cards/#{@card.id}/admins/#{@card.admin_id}/edit"
+        = image_tag qrcode_tag "http://localhost:3000/admins/#{current_admin.id}/cards/#{@card.id}/edit"
       = link_to '削除', user_card_path(@card.id), method: :delete, class: "show-contents__upper__delete btn btn-danger"
     .show-contents__middle
       - if @card.benefits.present?
