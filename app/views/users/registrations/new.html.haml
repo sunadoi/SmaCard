@@ -28,5 +28,10 @@
             = f.label :password_confirmation
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off"
+        .field
+          .field-label
+            = f.label :TEL
+          .field-input
+            = f.text_field :tel
         .actions
           = f.submit "Create Account", class: 'btn'
