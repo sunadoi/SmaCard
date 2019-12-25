@@ -7,10 +7,15 @@ class BenefitListsController < ApplicationController
 
   def create
     @benefit_list = BenefitList.create(benefit_list_params)
+    @benefit = Benefit.create(benefit_list_id: @benefit_list.id)
+    @cards = Card.where(card_list_id: @benefit_list.card_list_id)
+    @cards.each do |card|
+      @cards_benefits = CardsBenefit.create(card_id: card.id, benefit_id: @benefit.id)
+    end
     flash[:notice] = "特典を追加しました"
     redirect_to admin_card_list_index_path(current_admin.id)
   end
-  
+
   def edit
   end
 
