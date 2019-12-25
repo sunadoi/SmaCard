@@ -23,9 +23,10 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :cards
+    resources :card_lists, only: [:show]
   end
 
-  resources :cards do
+  resources :cards, only: [] do
     collection do
       get 'top'
     end

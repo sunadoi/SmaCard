@@ -161,11 +161,13 @@ $brown-color: #2c1e0c;
       margin-right: 50px;
       font-size: 20px;
       li {
+        font-size: 1.3vw;
         width: 100%;
       }
     }
     &__delete {
       width: 15%;
+      font-size: 1vw;
     }
   }
 }

@@ -3,6 +3,10 @@ class CardListsController < ApplicationController
     @card_list = CardList.find_by(admin_id: current_admin.id)
   end
 
+  def show
+    @card_list = CardList.find(params[:id])
+  end
+
   def new
     @card_list = CardList.new
     @relation = Relation.new
