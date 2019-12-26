@@ -2,33 +2,27 @@
   = form_with(url: admin_card_lists_path, local: true, class: "admin-card__form") do |form|
     = form.fields_for :relation do |relation|
       .admin-card__form__relation
-        = relation.label :name, "店舗名"
+        = relation.label :name, "店舗名:"
         = relation.text_field :name, value: "#{@relation.try(:name)}"
         <br>
-        = relation.label :location, "住所"
+        = relation.label :location, "住所:"
         = relation.text_field :location, value: "#{@relation.try(:location)}"
         <br>
-        = relation.label :opening_time, "開店時間"
+        = relation.label :opening_time, "開店時間:"
         = relation.time_field :opening_time, value: "#{@relation.try(:opening_time).try(:strftime, "%H:%M")}"
         <br>
-        = relation.label :closing_time, "閉店時間"
+        = relation.label :closing_time, "閉店時間:"
         = relation.time_field :closing_time, value: "#{@relation.try(:closing_time).try(:strftime, "%H:%M")}"
         <br>
-        = relation.label :tel, "電話番号"
+        = relation.label :tel, "電話番号:"
         = relation.text_field :tel, value: "#{@relation.try(:tel)}"
         <br>
-        = relation.label :url, "URL"
+        = relation.label :url, "URL:"
         = relation.text_field :url, value: "#{@relation.try(:url)}"
-    = form.fields_for :benefit_list do |benefit|
-      .admin-card__form__benefit
-        = benefit.label :description, "特典内容"
-        = benefit.text_field :description, value: "#{@benefit_list.try(:description)}"
-    = form.fields_for :coupon_list do |coupon|
-      .admin-card__form__coupon
-        = coupon.label :description, "クーポン内容"
-        = coupon.text_field :description, value: "#{@coupon_list.try(:description)}"
         <br>
-        = coupon.label :expiration, "有効期限"
-        = coupon.date_field :expiration, value: "#{@coupon_list.try(:expiration)}"
-    = form.submit "ポイント特典登録画面へ"
+        = relation.label :image, class: 'form__mask__image' do
+          = relation.label :image, "アイコン画像:"
+          = icon('fas', 'image')
+          = relation.file_field :image
+    = form.submit "カード情報を登録する"
     

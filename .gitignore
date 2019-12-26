@@ -28,3 +28,4 @@
 
 # Ignore image file.
 public/images/*
+public/uploads/*

@@ -1,6 +1,6 @@
 .content-card
   = link_to user_card_list_path(current_user.id, card_list.id), method: :get, class: "content-card__image" do
-    = image_tag "/images/IMG_5385.jpg"
+    = image_tag "#{card_list.relation.image}"
   %ul.content-card__info
     - if card_list.benefit_lists.present?
       %li.content-card__info__name #{card_list.relation.name}
