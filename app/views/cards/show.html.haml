@@ -1,19 +1,19 @@
 .container
   .show-contents
     .show-contents__upper
-      .show-contents__upper__image= image_tag "/images/IMG_5385.jpg"
+      .show-contents__upper__image= image_tag "#{@card.relation.image}"
       %ul.show-contents__upper__info
         %li.show-contents__upper__name= @card.relation.name
         %li.show-contents__upper__point 現在のポイント: #{@card.point}
         - if @card.expiration.present?
           %li.show-contents__upper__expiration 有効期限: #{@card.expiration.strftime("%Y/%m/%d")}
       .show-contents__upper__qrcode
-        = image_tag qrcode_tag "http://localhost:3000/admins/#{current_admin.id}/cards/#{@card.id}/edit"
+        = image_tag qrcode_tag "http://localhost:3000/admins/#{@card.admin_id}/cards/#{@card.id}/edit"
       = link_to '削除', user_card_path(@card.id), method: :delete, class: "show-contents__upper__delete btn btn-danger"
     .show-contents__middle
-      - if @card.benefits.present?
-        .show-contents__middle__benefits
-          %h2 ポイント特典
+      .show-contents__middle__benefits
+        %h2 ポイント特典
+        - if @card.benefits.present?
           - @card.benefits.each do |benefit|
             .show-contents__middle__benefits__info
               .description
@@ -25,9 +25,9 @@
               - else
                 .used-date--unused
                   未使用
-      - if @card.coupons.present?
-        .show-contents__middle__coupons
-          %h2 クーポン
+      .show-contents__middle__coupons
+        %h2 クーポン
+        - if @card.coupons.present?
           - @card.coupons.each do |coupon|
             .show-contents__middle__coupons__info
               .description
