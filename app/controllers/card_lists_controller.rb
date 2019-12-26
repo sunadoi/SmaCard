@@ -23,8 +23,6 @@ class CardListsController < ApplicationController
       Relation.transaction do
         @card_list = CardList.create(admin_id: current_admin.id)
         @relation = Relation.create!(relation_params)
-        @benefit_list = BenefitList.create(benefit_params)
-        @coupon_list = CouponList.create(coupon_params)
         flash[:notice] = "カードを登録しました"
         redirect_to top_cards_path
       end
@@ -48,15 +46,7 @@ class CardListsController < ApplicationController
   private
 
   def relation_params
-    params.require(:relation).permit(:name, :location, :opening_time, :closing_time, :tel, :url).merge(card_list_id: @card_list.id)
-  end
-
-  def benefit_params
-    params.require(:benefit_list).permit(:description).merge(card_list_id: @card_list.id)
-  end
-
-  def coupon_params
-    params.require(:coupon_list).permit(:description, :expiration).merge(card_list_id: @card_list.id)
+    params.require(:relation).permit(:name, :location, :opening_time, :closing_time, :tel, :url, :image).merge(card_list_id: @card_list.id)
   end
 
   def admin_sign_up
