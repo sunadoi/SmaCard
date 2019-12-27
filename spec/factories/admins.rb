@@ -1,10 +1,16 @@
 FactoryBot.define do
-  
+
+  pass = Faker::Internet.password(8)
+
   factory :admin do
-    name {"hoge"}
-    email {Faker::Internet.free_email}
-    password {"hogehoge"}
-    password_confirmation {"hogehoge"}
+    name                  {Faker::Name.name}
+    email                 {Faker::Internet.email}
+    password              {pass}
+    password_confirmation {pass}
+
+    after(:create) do |admin|
+      create(:card_list, admin: admin)
+    end
   end
   
 end
