@@ -5,6 +5,8 @@ FactoryBot.define do
 
     after(:create) do |card_list|
       create(:benefit_list, card_list: card_list)
+      create(:coupon_list, card_list: card_list)
+      create(:card, card_list: card_list)
     end
   end
   
