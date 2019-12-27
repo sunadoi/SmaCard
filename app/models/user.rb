@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :cards
 
-  validates :name, :tel, :password, presence: true
-  validates :email, presence: true, uniqueness: true
+  validates :name, :password, presence: true
+  validates :email, :tel, presence: true, uniqueness: true
 end

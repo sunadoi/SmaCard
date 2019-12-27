@@ -20,9 +20,13 @@ class BenefitListsController < ApplicationController
   end
 
   def update
-    @benefit_list.update(description: params[:description])
-    flash[:notice] = "特典情報を変更しました"
-    redirect_to admin_card_list_index_path(current_admin.id)
+    if @benefit_list.update(benefit_list_params)
+      flash[:notice] = "特典情報を変更しました"
+      redirect_to admin_card_list_index_path(current_admin.id)
+    else
+      flash.now[:alert] = '特典内容をを入力してください。'
+      render action: :edit
+    end
   end
 
   def destroy

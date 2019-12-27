@@ -1,6 +1,6 @@
 .container
   %h1 クーポン情報を変更してください
-  = form_with(url: admin_card_list_coupon_list_path(current_admin.id, @coupon_list.card_list.id, @coupon_list.id), method: :put, local: true, class: "admin-card-coupon__form") do |form|
+  = form_with(url: admin_card_list_coupon_list_path(current_admin.id, @coupon_list.card_list.id, @coupon_list.id), method: :patch, local: true, class: "admin-card-coupon__form") do |form|
     .admin-card__form__coupon
       = form.label :description, "クーポン内容"
       = form.text_field :description, value: "#{@coupon_list.description}", required: true

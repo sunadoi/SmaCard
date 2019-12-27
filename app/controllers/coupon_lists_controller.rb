@@ -20,9 +20,13 @@ class CouponListsController < ApplicationController
   end
 
   def update
-    @coupon_list.update(description: params[:description], expiration: params[:expiration])
-    flash[:notice] = "特典情報を変更しました"
-    redirect_to admin_card_list_index_path(current_admin.id)
+    if @coupon_list.update(coupon_list_params)
+      flash[:notice] = "特典情報を変更しました"
+      redirect_to admin_card_list_index_path(current_admin.id)
+    else
+      flash.now[:alert] = "クーポン内容を入力してください"
+      render action: :edit
+    end
   end
 
   def destroy
