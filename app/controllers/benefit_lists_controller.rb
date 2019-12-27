@@ -24,7 +24,7 @@ class BenefitListsController < ApplicationController
       flash[:notice] = "特典情報を変更しました"
       redirect_to admin_card_list_index_path(current_admin.id)
     else
-      flash.now[:alert] = '必要事項を入力してください。'
+      flash.now[:alert] = '特典内容をを入力してください。'
       render action: :edit
     end
   end
