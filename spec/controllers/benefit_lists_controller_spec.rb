@@ -6,8 +6,12 @@ describe BenefitListsController do
   let(:card_list) { create(:card_list) }
 
   describe 'GET #new' do
-    it "renders the :new template" do
+    before do
+      login_admin admin
       get :new, params: { admin_id: admin.id, card_list_id: benefit_list.card_list_id }
+    end
+
+    it "renders the :new template" do
       expect(response).to render_template :new
     end
   end
@@ -92,7 +96,7 @@ describe BenefitListsController do
       expect{delete :destroy, params: {id: benefit_list, admin_id: admin.id, card_list_id: benefit_list.card_list_id}}.to change(BenefitList, :count).by(-1)
     end
 
-    it "renders the :edit templete" do
+    it "redirects to admin_card_list_index_path" do
       expect(response).to redirect_to admin_card_list_index_path(admin.id)
     end
   end
