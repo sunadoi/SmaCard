@@ -3,6 +3,6 @@
     = form_with(url: search_cards_path, local: true, method: :get, class: "search-form") do |form|
       = form.text_field :keyword, placeholder: "カードを検索する", class: "search-input"
       = form.submit "検索", class: "search-btn"
-  .new-contents
+  .new-contents.row
     - @cards.each do |card_list|
       = render partial: "cards", locals: {card_list: card_list}

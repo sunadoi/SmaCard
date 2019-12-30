@@ -1,4 +1,4 @@
-.content-card
+.content-card.col-md-4
   = link_to user_card_list_path(current_user.id, card_list.id), method: :get, class: "content-card__image" do
     = image_tag "#{card_list.relation.image}"
   %ul.content-card__info
