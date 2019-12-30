@@ -143,6 +143,7 @@ $brown-color: #2c1e0c;
 .index-contents {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   .content-card {
     display: flex;
     justify-content: space-around;
