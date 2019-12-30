@@ -23,7 +23,7 @@ class CardsController < ApplicationController
 
   def create
     @card_list = CardList.find(params[:card_list_id])
-    @card = Card.create(card_list_id: @card_list.id, admin_id: @card_list.admin_id, relation_id: @card_list.relation.id, user_id: current_user.id)
+    @card = @card_list.cards.create(admin_id: @card_list.admin_id, relation_id: @card_list.relation.id, user_id: current_user.id)
 
     if benefit_params.present?
       benefit_lists = []
@@ -59,6 +59,10 @@ class CardsController < ApplicationController
 
   def update
     @card.update(card_params)
+    @benefit = Benefit.find(params[:benefit_id])
+    @benefit.update(used_date: params[:benefit_used_date])
+    @coupon = Coupon.find(params[:coupon_id])
+    @coupon.update(used_date: params[:coupon_used_date])
   end
 
   def destroy
