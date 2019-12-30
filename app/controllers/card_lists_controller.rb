@@ -24,7 +24,7 @@ class CardListsController < ApplicationController
         @card_list = CardList.create(admin_id: current_admin.id)
         @relation = Relation.create!(relation_params)
         flash[:notice] = "カードを登録しました"
-        redirect_to top_cards_path
+        redirect_to admin_card_list_index_path(current_admin.id)
       end
     rescue => e 
       @card_list = CardList.new(admin_id: current_admin.id)
