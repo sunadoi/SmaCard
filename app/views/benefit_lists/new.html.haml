@@ -3,7 +3,7 @@
   = form_with(url: admin_card_list_benefit_lists_path, local: true, class: "admin-card-benefit__form") do |form|
     .admin-card__form__benefit
       = form.label :description, "特典内容"
-      = form.text_field :description, required: true
+      = form.text_field :description, id: "text", required: true
     = form.submit "特典を追加する"
 
 

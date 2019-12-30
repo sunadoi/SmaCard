@@ -8,7 +8,16 @@
         %li.show-contents__upper__opening 営業時間: #{@card_list.relation.opening_time.strftime("%H:%M")} ~ #{@card_list.relation.closing_time.strftime("%H:%M")}
         %li.show-contents__upper__tel TEL: #{@card_list.relation.tel}
         %li.show-contents__upper__location URL: #{@card_list.relation.url}
-      = link_to '追加', user_cards_path(current_user.id), class: "show-contents__upper__add btn btn-success"
+      = form_with(url: user_cards_path(current_user.id), local: true, class: "admin-card__form") do |form|
+        = form.hidden_field :card_list_id, value: "#{@card_list.id}"
+        - @card_list.benefit_lists.each do |benefit_list|
+          = fields_for "benefit_lists[]", benefit_list do |field|
+            = field.hidden_field :benefit_description, value: "#{benefit_list.description}"
+        - @card_list.coupon_lists.each do |coupon_list|
+          = fields_for "coupon_lists[]", coupon_list do |field|
+            = field.hidden_field :coupon_description, value: "#{coupon_list.description}"
+            = field.hidden_field :expiration, value: "#{coupon_list.expiration}"
+        = form.submit "追加", class: "content-card__add btn btn-success"
     .show-contents__middle
       .show-contents__middle__benefits
         %h2 ポイント特典

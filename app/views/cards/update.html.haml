@@ -2,4 +2,4 @@
   .contents
     .success
       %h3 更新が完了しました
-      %a.btn{ href: "/", class: "btn btn-primary" }カード一覧へ戻る
+      = link_to "カード管理画面へ戻る", admin_card_list_index_path(current_admin.id), class: "btn btn-primary"

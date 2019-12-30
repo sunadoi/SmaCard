@@ -1,8 +1,8 @@
 .container
-  .index-contents
+  .index-contents.row
     - @cards.each do |card|
       - if user_signed_in? && current_user.id == card.user_id
-        .content-card
+        .content-card.col-md-4
           = link_to user_card_path(current_user.id, card.id), class: "content-card__image" do
             = image_tag "#{card.relation.image}"
           %ul.content-card__info
