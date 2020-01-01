@@ -30,6 +30,3 @@
 public/images/*
 public/uploads/*
 spec/fixtures/*
-
-#DB password
-environments/db.env
