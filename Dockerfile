@@ -1,6 +1,6 @@
 FROM ruby:2.5.1
     RUN apt-get update && \
-        apt-get install -y mysql-client nodejs --no-install-recommends && \
+        apt-get install -y mysql-client nodejs vim --no-install-recommends && \
         rm -rf /var/lib/apt/lists/*
 
     RUN mkdir /myproject
