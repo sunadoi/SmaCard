@@ -14,3 +14,5 @@ FROM ruby:2.5.1
     RUN bundle install
 
     ADD . /myproject
+
+    RUN mkdir -p tmp/sockets
