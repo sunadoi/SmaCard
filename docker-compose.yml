@@ -2,28 +2,42 @@ version: '2'
 services:
   db:
     image: mysql:5.6
+    env_file:
+      - ./environments/db.env
     volumes:
       - mysql-data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: card_management_web_development
-      MYSQL_USER: root
-      MYSQL_PASSWORD: password
     ports:
       - "4306:3306"
 
-  web:
+  app:
     tty: true
     stdin_open: true
     build: .
-    command: rails s -p 3000 -b '0.0.0.0'
+    env_file:
+      - ./environments/db.env
+    command: bundle exec puma -C config/puma.rb
     volumes:
       - .:/myproject
       - bundle:/usr/local/bundle
-    ports:
-      - "3000:3000"
+      - public-data:/myproject/public
+      - tmp-data:/myproject/tmp
+      - log-data:/myproject/log
     links:
       - db
+
+  web:
+    build:
+      context: containers/nginx
+    volumes:
+      - public-data:/myproject/public
+      - tmp-data:/myproject/tmp
+    ports:
+      - 8080:80
+    depends_on:
+      - app
 volumes:
   mysql-data:
   bundle:
+  public-data:
+  tmp-data:
+  log-data:

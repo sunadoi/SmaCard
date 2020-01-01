@@ -1,0 +1,14 @@
+tmp/*
+log/*
+.git
+containers
+
+public/images/*
+public/uploads/*
+spec/fixtures/*
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+#DB password
+environments/db.env
