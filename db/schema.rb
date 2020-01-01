@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_24_103236) do
+ActiveRecord::Schema.define(version: 2020_01_01_095245) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -57,10 +57,8 @@ ActiveRecord::Schema.define(version: 2019_12_24_103236) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "expiration"
-    t.bigint "card_list_id_id"
     t.bigint "card_list_id"
     t.index ["card_list_id"], name: "index_cards_on_card_list_id"
-    t.index ["card_list_id_id"], name: "index_cards_on_card_list_id_id"
   end
 
   create_table "cards_benefits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
