@@ -2,8 +2,6 @@ version: '2'
 services:
   db:
     image: mysql:5.6
-    env_file:
-      - ./environments/db.env
     volumes:
       - mysql-data:/var/lib/mysql
     ports:
@@ -13,8 +11,6 @@ services:
     tty: true
     stdin_open: true
     build: .
-    env_file:
-      - ./environments/db.env
     command: bundle exec puma -C config/puma.rb
     volumes:
       - .:/myproject
