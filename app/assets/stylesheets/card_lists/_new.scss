@@ -1,0 +1,44 @@
+.card_list-new-contents {
+  width: 100%;
+  .new-content {
+    width: 100%;
+    h2 {
+      text-align: center;
+      margin: 5% 0;
+      font-size: calc(15px + 1vw);
+    }
+    .admin-card__form {
+      width: 100%;
+      &__relation {
+        &__input {
+          width: 60%;
+          margin: 3% auto;
+          display: flex;
+          font-size: calc(10px + 1vw);
+          .label {
+            width: 35%;
+          }
+          .form-input {
+            width: 30%;
+            align-items: center;
+          }
+          .location, .url {
+            width: 65%;
+          }
+          .opening, .closing {
+            width: 20%;
+            text-align: center;
+          }
+          .image {
+            font-size: 1vw;
+            width: 65%;
+          }
+        }
+      }
+      &__submit {
+        text-align: center;
+        margin-bottom: 5%;
+      }
+    }
+  }
+}

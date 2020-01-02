@@ -1,28 +1,30 @@
 .container
-  = form_with(url: admin_card_lists_path, local: true, class: "admin-card__form") do |form|
-    = form.fields_for :relation do |relation|
-      .admin-card__form__relation
-        = relation.label :name, "店舗名:"
-        = relation.text_field :name, value: "#{@relation.try(:name)}"
-        <br>
-        = relation.label :location, "住所:"
-        = relation.text_field :location, value: "#{@relation.try(:location)}"
-        <br>
-        = relation.label :opening_time, "開店時間:"
-        = relation.time_field :opening_time, value: "#{@relation.try(:opening_time).try(:strftime, "%H:%M")}"
-        <br>
-        = relation.label :closing_time, "閉店時間:"
-        = relation.time_field :closing_time, value: "#{@relation.try(:closing_time).try(:strftime, "%H:%M")}"
-        <br>
-        = relation.label :tel, "電話番号:"
-        = relation.text_field :tel, value: "#{@relation.try(:tel)}"
-        <br>
-        = relation.label :url, "URL:"
-        = relation.text_field :url, value: "#{@relation.try(:url)}"
-        <br>
-        = relation.label :image, class: 'form__mask__image' do
-          = relation.label :image, "アイコン画像:"
-          = icon('fas', 'image')
-          = relation.file_field :image
-    = form.submit "カード情報を登録する"
-    
+  .card_list-new-contents
+    .new-content
+      %h2 店舗情報を入力してください
+      = form_with(url: admin_card_lists_path, local: true, class: "admin-card__form") do |form|
+        = form.fields_for :relation do |relation|
+          .admin-card__form__relation
+            .admin-card__form__relation__input
+              = relation.label :name, "店舗名", class: "label"
+              = relation.text_field :name, value: "#{@relation.try(:name)}", class: "form-input name"
+            .admin-card__form__relation__input
+              = relation.label :location, "住所", class: "label"
+              = relation.text_field :location, value: "#{@relation.try(:location)}", class: "form-input location"
+            .admin-card__form__relation__input
+              = relation.label :opening_time, "開店時間", class: "label"
+              = relation.time_field :opening_time, value: "#{@relation.try(:opening_time).try(:strftime, "%H:%M")}", class: "form-input opening"
+            .admin-card__form__relation__input
+              = relation.label :closing_time, "閉店時間", class: "label"
+              = relation.time_field :closing_time, value: "#{@relation.try(:closing_time).try(:strftime, "%H:%M")}", class: "form-input closing"
+            .admin-card__form__relation__input
+              = relation.label :tel, "電話番号", class: "label"
+              = relation.text_field :tel, value: "#{@relation.try(:tel)}", class: "form-input tel"
+            .admin-card__form__relation__input
+              = relation.label :url, "URL", class: "label"
+              = relation.text_field :url, value: "#{@relation.try(:url)}", class: " form-input url"
+            .admin-card__form__relation__input
+              = relation.label :image, "アイコン画像", class: "label"
+              = relation.file_field :image, class: "form-input image"
+        .admin-card__form__submit
+          = form.submit "カード情報を登録する", class: "form-submit btn btn-primary"
