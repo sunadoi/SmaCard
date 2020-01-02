@@ -65,7 +65,7 @@ $brown-color: #2c1e0c;
   background-color: $light_blue;
   opacity: 0.85;
   color: white;
-  z-index: 0;
+  z-index: 1;
   a {
     color: white;
   }
@@ -141,13 +141,14 @@ $brown-color: #2c1e0c;
 }
 
 .index-contents {
+  margin-top: 5%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   .content-card {
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    width: 80%;
     height: 100%;
     padding: 10px;
     margin: 2%;
@@ -155,20 +156,22 @@ $brown-color: #2c1e0c;
     background-color: #e8e8e8;
     border-radius: 1em;
     &__image {
-      width: 30%;
-      margin-right: 20px;
+      width: 25%;
     }
     &__info {
-      margin-right: 50px;
+      width: 50%;
       font-size: 20px;
-      li {
-        font-size: 1.3vw;
-        width: 100%;
+      &__name {
+        font-size: calc(15px + 1vw)
+      }
+      &__point {
+        font-size: calc(13px + 0.5vw)
       }
     }
     &__delete {
-      width: 15%;
+      width: 13%;
       font-size: 1vw;
     }
   }
 }
+
