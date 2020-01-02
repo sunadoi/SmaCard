@@ -1,13 +1,183 @@
-.card-list {
-  .show-contents {
+.card_list-index-contents {
+  .index-contents {
     &__upper {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 2%;
+      border-bottom: dotted 1px;
       padding-bottom: 2%;
-      li {
-        font-size: 1.5vw;
+      &__image {
+        width: 15%;
       }
       &__name {
-        font-size: 4vw;
+        width: 25%;
+        font-size: calc(15px + 1vw);
+        text-align: center;
+      }
+      &__info {
+        width: 45%;
+        font-size: calc(10px + 0.5vw);
+      }
+      &__btn {
+        width: 10%;
+        &--edit {
+          width: 100%;
+          color: white;
+          font-size: calc(5px + 1vw);
+        }
+        &--delete {
+          width: 100%;
+          font-size: calc(5px + 1vw);
+          margin-top: 10%;
+        }
+      }
+    }
+    &__middle {
+      margin-bottom: 10%;
+      width: 100%;
+      h2 {
+        font-size: calc(10px + 1vw);
+      }
+      &__benefits {
+        margin: 5% 0;
+        font-size: 2vw;
+        padding: 3%;
+        border-radius: 1em;
+        background-color:#e8e8e8;
+        h2 {
+          margin-bottom: 2%;
+        }
+        &__info {
+          display: flex;
+          .description {
+            width: 80%;
+            font-size: calc(10px + 1vw);
+          }
+          .index-contents__middle__benefits__btn {
+            width: 25%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            &--edit {
+              font-size: calc(5px + 0.5vw);
+              color: white;
+              margin-right: 3%;
+            }
+            &--destroy {
+              font-size: calc(5px + 0.5vw);
+            }
+          }
+        }
+        &__add {
+          font-size: calc(5px + 0.5vw);
+        }
+      }
+
+      &__coupons {
+        margin: 5% 0;
+        font-size: 2vw;
+        padding: 3%;
+        border-radius: 1em;
+        background-color:#e8e8e8;
+        h2 {
+          margin-bottom: 2%;
+        }
+        &__info {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          .description {
+            width: 45%;
+            font-size: calc(10px + 1vw);
+          }
+          .expiration {
+            width: 25%;
+            font-size: calc(5px + 1vw);
+          }
+          .index-contents__middle__coupons__btn {
+            width: 25%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            &--edit {
+              font-size: calc(5px + 0.5vw);
+              color: white;
+              margin-right: 3%;
+            }
+            &--destroy {
+              font-size: calc(5px + 0.5vw);
+            }
+          }
+        }
+        &__add {
+          font-size: calc(5px + 0.5vw);
+        }
       }
     }
   }
 }
+
+// &__upper {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   margin-top: 2%;
+//   border-bottom: dotted 1px;
+//   padding-bottom: 2%;
+//   &__image {
+//     width: 15%;
+//   }
+//   &__name {
+//     width: 25%;
+//     font-size: calc(15px + 1vw);
+//     text-align: center;
+//   }
+//   &__info {
+//     width: 45%;
+//     height: 30%;
+//     font-size: calc(10px + 0.5vw);
+//   }
+//   &__add {
+//     font-size: calc(5px + 0.5vw);
+//   }
+//   .admin-card__form {
+//     width: 10%;
+//     text-align: center;
+//   }
+// }
+// &__middle {
+//   margin-bottom: 10%;
+//   &__benefits {
+//     margin: 5% 0;
+//     font-size: 2vw;
+//     padding: 3%;
+//     border-radius: 1em;
+//     background-color:#e8e8e8;
+//     h2 {
+//       margin-bottom: 2%;
+//     }
+//     &__info {
+//       display: flex;
+//       .description {
+//         width: 90%;
+//       }
+//     }
+//   }
+//   &__coupons {
+//     font-size: 2vw;
+//     padding: 3%;
+//     border-radius: 1em;
+//     background-color:#e8e8e8;
+//     h2 {
+//       margin-bottom: 2%;
+//     }
+//     &__info {
+//       display: flex;
+//       justify-content: space-between;
+//       .description {
+//         width: 50%;
+//       }
+//     }
+//   }
+// }
