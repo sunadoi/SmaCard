@@ -1,12 +1,12 @@
-.content-card.col-md-4
+.content-card.col-md-5
   = link_to user_card_list_path(current_user.id, card_list.id), method: :get, class: "content-card__image" do
     = image_tag "#{card_list.relation.image}"
   %ul.content-card__info
+    %li.content-card__info__name #{card_list.relation.name}
     - if card_list.benefit_lists.present?
-      %li.content-card__info__name #{card_list.relation.name}
-      %li.content-card__info__benefit ポイント特典: #{card_list.benefit_lists[0].description}
+      %li.content-card__info__benefit #{card_list.benefit_lists[0].description}
     - if card_list.coupon_lists.present?
-      %li.content-card__info__coupon クーポン: #{card_list.coupon_lists[0].description}
+      %li.content-card__info__coupon #{card_list.coupon_lists[0].description}
   = form_with(url: user_cards_path(current_user.id), local: true, class: "admin-card__form") do |form|
     = form.hidden_field :card_list_id, value: "#{card_list.id}"
     - card_list.benefit_lists.each do |benefit_list|

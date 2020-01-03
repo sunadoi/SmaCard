@@ -1,18 +1,19 @@
 FROM ruby:2.5.1
-    RUN apt-get update && \
-        apt-get install -y mysql-client nodejs vim --no-install-recommends && \
-        rm -rf /var/lib/apt/lists/*
 
-    RUN mkdir /myproject
+RUN apt-get update && \
+    apt-get install -y mysql-client nodejs vim --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
 
-    WORKDIR /myproject
+RUN mkdir /myproject
 
-    ADD Gemfile /myproject/Gemfile
-    ADD Gemfile.lock /myproject/Gemfile.lock
+WORKDIR /myproject
 
-    RUN gem install bundler
-    RUN bundle install
+ADD Gemfile /myproject/Gemfile
+ADD Gemfile.lock /myproject/Gemfile.lock
 
-    ADD . /myproject
+RUN gem install bundler
+RUN bundle install
 
-    RUN mkdir -p tmp/sockets
+ADD . /myproject
+
+RUN mkdir -p tmp/sockets

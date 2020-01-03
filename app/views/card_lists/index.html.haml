@@ -1,42 +1,39 @@
 .container
-  .card-list
-    .show-contents
-      .show-contents__upper
-        .show-contents__upper__image= image_tag "#{@card_list.relation.image}"
-        %h2.show-contents__upper__name= @card_list.relation.name
-        %ul.show-contents__upper__info
-          %li.show-contents__upper__location 住所: #{@card_list.relation.location}
-          %li.show-contents__upper__opening 営業時間: #{@card_list.relation.opening_time.strftime("%H:%M")} ~ #{@card_list.relation.closing_time.strftime("%H:%M")}
-          %li.show-contents__upper__tel TEL: #{@card_list.relation.tel}
-          %li.show-contents__upper__location URL: #{@card_list.relation.url}
-        = link_to '編集', edit_admin_card_list_relation_path(current_admin.id, @card_list.id, @card_list.relation.id), class: "show-contents__upper__edit btn btn-warning"
-        = link_to '削除', admin_card_list_path(current_admin.id, @card_list.id), method: :delete, class: "show-contents__upper__delete btn btn-danger"
-      .show-contents__middle
-        .show-contents__middle__benefits
+  .card_list-index-contents
+    .index-contents
+      .index-contents__upper
+        .index-contents__upper__image= image_tag "#{@card_list.relation.image}"
+        %h2.index-contents__upper__name= @card_list.relation.name
+        %ul.index-contents__upper__info
+          %li.index-contents__upper__location 住所: #{@card_list.relation.location}
+          %li.index-contents__upper__opening 営業時間: #{@card_list.relation.opening_time.strftime("%H:%M")} ~ #{@card_list.relation.closing_time.strftime("%H:%M")}
+          %li.index-contents__upper__tel TEL: #{@card_list.relation.tel}
+          %li.index-contents__upper__location URL: #{@card_list.relation.url}
+        .index-contents__upper__btn
+          = link_to '編集', edit_admin_card_list_relation_path(current_admin.id, @card_list.id, @card_list.relation.id), class: "index-contents__upper__btn--edit btn btn-warning"
+          = link_to '削除', admin_card_list_path(current_admin.id, @card_list.id), method: :delete, class: "index-contents__upper__btn--delete btn btn-danger"
+      .index-contents__middle
+        .index-contents__middle__benefits
           %h2 ポイント特典
           - @card_list.benefit_lists.each do |benefit|
             - if benefit.present?
-              .show-contents__middle__benefits__info
+              .index-contents__middle__benefits__info
                 .description
                   = benefit.description
-                .show-contents__middle__benefits__info--edit
-                  = link_to '編集', edit_admin_card_list_benefit_list_path(@card_list.admin_id, @card_list.id, benefit.id), class: "btn btn-warning"
-                .show-contents__middle__benefits__info--destroy
-                  = link_to '削除', admin_card_list_benefit_list_path(@card_list.admin_id, @card_list.id, benefit.id), method: :delete, class: "btn btn-danger"
-          .show-contents__middle__benefits__btn
-            = link_to '追加', new_admin_card_list_benefit_list_path(@card_list.admin_id, @card_list.id), class: "btn btn-success"
-        .show-contents__middle__coupons
+                .index-contents__middle__benefits__btn
+                  = link_to '編集', edit_admin_card_list_benefit_list_path(@card_list.admin_id, @card_list.id, benefit.id), class: "index-contents__middle__benefits__btn--edit btn btn-warning"
+                  = link_to '削除', admin_card_list_benefit_list_path(@card_list.admin_id, @card_list.id, benefit.id), method: :delete, class: "index-contents__middle__benefits__btn--destroy btn btn-danger"
+          = link_to '追加', new_admin_card_list_benefit_list_path(@card_list.admin_id, @card_list.id), class: "index-contents__middle__benefits__add btn btn-success"
+        .index-contents__middle__coupons
           %h2 クーポン
           - @card_list.coupon_lists.each do |coupon|
             - if coupon.present?
-              .show-contents__middle__coupons__info
+              .index-contents__middle__coupons__info
                 .description
                   = coupon.description
                 .expiration
                   有効期限: #{coupon.expiration.try(:strftime, "%Y/%m/%d")}
-                .show-contents__middle__coupons__info--edit
-                  = link_to '編集', edit_admin_card_list_coupon_list_path(@card_list.admin_id, @card_list.id, coupon.id), class: "btn btn-warning"
-                .show-contents__middle__coupons__info--destroy
-                  = link_to '削除', admin_card_list_coupon_list_path(@card_list.admin_id, @card_list.id, coupon.id), method: :delete, class: "btn btn-danger"
-          .show-contents__middle__coupons__btn
-            = link_to '追加', new_admin_card_list_coupon_list_path(@card_list.admin_id, @card_list.id), class: "btn btn-success"
+                .index-contents__middle__coupons__btn
+                  = link_to '編集', edit_admin_card_list_coupon_list_path(@card_list.admin_id, @card_list.id, coupon.id), class: "index-contents__middle__coupons__btn--edit btn btn-warning"
+                  = link_to '削除', admin_card_list_coupon_list_path(@card_list.admin_id, @card_list.id, coupon.id), method: :delete, class: "index-contents__middle__coupons__btn--destroy btn btn-danger"
+          = link_to '追加', new_admin_card_list_coupon_list_path(@card_list.admin_id, @card_list.id), class: "index-contents__middle__coupons__add btn btn-success"

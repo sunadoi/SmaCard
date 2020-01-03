@@ -1,3 +1,17 @@
+.search {
+  margin: 3% 0;
+  .search-form {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .search-input {
+    width: 35%;
+  }
+  .search-btn {
+    width: 10%;
+  }
+}
+
 .new-contents {
   display: flex;
   justify-content: space-around;
@@ -5,7 +19,7 @@
   .content-card {
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    width: 80%;
     height: 100%;
     padding: 10px;
     margin: 2%;
@@ -13,20 +27,26 @@
     background-color: #e8e8e8;
     border-radius: 1em;
     &__image {
-      width: 30%;
-      margin-right: 20px;
+      width: 20%;
     }
     &__info {
-      margin-right: 50px;
+      width: 45%;
       font-size: 20px;
-      li {
-        width: 100%;
-        font-size: 1.3vw;
+      &__name {
+        font-size: calc(10px + 1vw)
+      }
+      &__benefit {
+        font-size: calc(13px + 0.5vw)
+      }
+      &__coupon {
+        font-size: calc(13px + 0.5vw)
       }
     }
+    .admin-card__form {
+      width: 10%;
+    }
     &__add {
-      width: 100%;
-      font-size: 1vw;
+      font-size: calc(5px + 0.5vw);
     }
   }
 }

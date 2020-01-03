@@ -1,0 +1,11 @@
+.success-contents {
+  h3 {
+    text-align: center;
+    margin: 5% 0;
+    font-size: calc(15px + 1vw);
+  }
+  &__btn {
+    margin-top: 3%;
+    text-align: center;
+  }
+}

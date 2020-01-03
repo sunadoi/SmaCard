@@ -1,0 +1,33 @@
+.coupon_list-contents {
+  width: 100%;
+  h2 {
+    text-align: center;
+    margin: 5% 0;
+    font-size: calc(15px + 1vw);
+  }
+  .admin-card__form {
+    width: 100%;
+    &__coupon {
+      &__input {
+        width: 60%;
+        margin: 3% auto;
+        display: flex;
+        font-size: calc(10px + 1vw);
+        align-items: center;
+        .label {
+          width: 30%;
+        }
+        .form-input {
+          width: 70%;
+        }
+        .expiration {
+          width: 40%;
+        }
+      }
+    }
+    &__submit {
+      text-align: center;
+      margin-bottom: 5%;
+    }
+  }
+}

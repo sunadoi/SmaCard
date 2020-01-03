@@ -1,4 +1,6 @@
 class CardsController < ApplicationController
+  require "date"
+
   before_action :ensure_login, except: [:top]
   before_action :set_card, only: [:show, :edit, :update, :destroy]
 
@@ -59,10 +61,14 @@ class CardsController < ApplicationController
 
   def update
     @card.update(card_params)
-    @benefit = Benefit.find(params[:benefit_id])
-    @benefit.update(used_date: params[:benefit_used_date])
-    @coupon = Coupon.find(params[:coupon_id])
-    @coupon.update(used_date: params[:coupon_used_date])
+    if params[:benefit_id].present?
+      @benefit = @card.benefits[params[:benefit_id].to_i - 1]
+      @benefit.update(used_date: Date.today)
+    end
+    if params[:coupon_id].present?
+      @coupon = @card.coupons[params[:coupon_id].to_i - 1]
+      @coupon.update(used_date: Date.today)
+    end
   end
 
   def destroy

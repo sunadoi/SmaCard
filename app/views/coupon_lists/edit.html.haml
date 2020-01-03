@@ -1,10 +1,13 @@
 .container
-  %h1 クーポン情報を変更してください
-  = form_with(url: admin_card_list_coupon_list_path(current_admin.id, @coupon_list.card_list.id, @coupon_list.id), method: :patch, local: true, class: "admin-card-coupon__form") do |form|
-    .admin-card__form__coupon
-      = form.label :description, "クーポン内容"
-      = form.text_field :description, value: "#{@coupon_list.description}", required: true
-      <br>
-      = form.label :exipiration, "有効期限"
-      = form.date_field :expiration, value: "#{@coupon_list.expiration}", required: true
-    = form.submit "クーポン内容を変更する"
+  .coupon_list-contents
+    %h2 クーポン情報を変更してください
+    = form_with(url: admin_card_list_coupon_list_path(current_admin.id, @coupon_list.card_list.id, @coupon_list.id), method: :patch, local: true, class: "admin-card__form") do |form|
+      .admin-card__form__coupon
+        .admin-card__form__coupon__input
+          = form.label :description, "内容", class: "label"
+          = form.text_field :description, value: "#{@coupon_list.description}", required: true, class: "form-input description"
+        .admin-card__form__coupon__input
+          = form.label :expiration, "有効期限", class: "label"
+          = form.date_field :expiration, value: "#{@coupon_list.expiration}", required: true, class: "form-input expiration"
+      .admin-card__form__submit
+        = form.submit "クーポン内容を変更する",  class: "form-submit btn btn-primary"
