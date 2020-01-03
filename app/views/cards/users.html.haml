@@ -23,12 +23,12 @@
               %td.record__data.benefit #{card.benefits[index].benefit_list.description}
               %td.record__data.benefit-used #{card.benefits[index].used_date}
             - else
-              %td.record__data
-              %td.record__data
+              %td.record__data.benefit
+              %td.record__data.benefit-used
             - if card.coupons[index].present?
               %td.record__data.coupon #{card.coupons[index].coupon_list.description}
               %td.record__data.coupon-used #{card.coupons[index].used_date}
             - else
-              %td.record__data
-              %td.record__data
+              %td.record__data.coupon
+              %td.record__data.coupon-used
           - index += 1

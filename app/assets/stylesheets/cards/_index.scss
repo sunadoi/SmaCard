@@ -76,17 +76,19 @@ $brown-color: #2c1e0c;
     align-items: center;
     .app-name {
       line-height: 100px;
-      padding-left: 40px;
-      font-size: 3vw;
+      padding-left: 3%;
+      font-size: calc(10px + 2vw);
     }
     .header-contents {
       display: flex;
       line-height: 100px;
-      font-size: 20px;
+      width: 80%;
+      justify-content: flex-end;
       &__content {
-        margin-right: 50px;
+        margin-right: 2%;
         a {
           color: white;
+          font-size: calc(10px + 1vw);
         }
       }
     }
@@ -162,10 +164,10 @@ $brown-color: #2c1e0c;
       width: 50%;
       font-size: 20px;
       &__name {
-        font-size: calc(15px + 1vw)
+        font-size: calc(15px + 1vw);
       }
       &__point {
-        font-size: calc(13px + 0.5vw)
+        font-size: calc(13px + 0.5vw);
       }
     }
     &__delete {
