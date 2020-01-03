@@ -1,26 +1,26 @@
 .container
-  %h1 登録内容を変更してください
-  = form_with(url: admin_card_list_relation_path(current_admin.id, @relation.card_list_id, @relation.id), method: :patch, local: true, class: "admin-card-relation__form") do |form|
-    .admin-card__form__relation
-      = form.label :name, "名前"
-      = form.text_field :name, value: "#{@relation.name}"
-      <br>
-      = form.label :location, "住所"
-      = form.text_field :location, value: "#{@relation.location}"
-      <br>
-      = form.label :opening_time, "開店時間"
-      = form.time_field :opening_time, value: "#{@relation.opening_time.try(:strftime, "%H:%M")}"
-      <br>
-      = form.label :opening_time, "閉店時間"
-      = form.time_field :closing_time, value: "#{@relation.closing_time.try(:strftime, "%H:%M")}"
-      <br>
-      = form.label :tel, "TEL"
-      = form.text_field :tel, value: "#{@relation.try(:tel)}"
-      <br>
-      = form.label :url, "URL"
-      = form.text_field :url, value: "#{@relation.try(:url)}"
-      <br>
-      = form.label :image, class: 'form__mask__image' do
-        = form.label :image, "アイコン画像:"
-        = form.file_field :image, value: "#{@relation.image}"
-    = form.submit "登録内容を変更する"
+  .relations-contents
+    .edit-content
+      %h2 登録内容を変更してください
+      = form_with(url: admin_card_list_relation_path(current_admin.id, @relation.card_list_id, @relation.id), method: :patch, local: true, class: "admin-card-relation__form") do |form|
+        .admin-card__form__relation
+          .admin-card__form__relation__input
+            = form.label :name, "店舗名", class: "label"
+            = form.text_field :name, value: "#{@relation.try(:name)}", class: "form-input name"
+          .admin-card__form__relation__input
+            = form.label :location, "住所", class: "label"
+            = form.text_field :location, value: "#{@relation.try(:location)}", class: "form-input location"
+          .admin-card__form__relation__input
+            = form.label :opening_time, "開店時間", class: "label"
+            = form.time_field :opening_time, value: "#{@relation.try(:opening_time).try(:strftime, "%H:%M")}", class: "form-input opening"
+          .admin-card__form__relation__input
+            = form.label :closing_time, "閉店時間", class: "label"
+            = form.time_field :closing_time, value: "#{@relation.try(:closing_time).try(:strftime, "%H:%M")}", class: "form-input closing"
+          .admin-card__form__relation__input
+            = form.label :tel, "電話番号", class: "label"
+            = form.text_field :tel, value: "#{@relation.try(:tel)}", class: "form-input tel"
+          .admin-card__form__relation__input
+            = form.label :url, "URL", class: "label"
+            = form.text_field :url, value: "#{@relation.try(:url)}", class: " form-input url"
+        .admin-card__form__submit
+          = form.submit "登録内容を変更する", class: "form-submit btn btn-primary"
