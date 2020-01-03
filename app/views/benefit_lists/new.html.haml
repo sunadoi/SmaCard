@@ -1,10 +1,13 @@
 .container
-  %h1 追加する特典情報を入力してください
-  = form_with(url: admin_card_list_benefit_lists_path, local: true, class: "admin-card-benefit__form") do |form|
-    .admin-card__form__benefit
-      = form.label :description, "特典内容"
-      = form.text_field :description, id: "text", required: true
-    = form.submit "特典を追加する"
+  .benefit_list-contents
+    %h2 追加する特典情報を入力してください
+    = form_with(url: admin_card_list_benefit_lists_path, local: true, class: "admin-card__form") do |form|
+      .admin-card__form__benefit
+        .admin-card__form__benefit__input
+          = form.text_field :description, id: "text", required: true, class: "form-input description"
+      .admin-card__form__submit
+        = form.submit "特典を追加する", class: "form-submit btn btn-primary"
+
 
 
 
