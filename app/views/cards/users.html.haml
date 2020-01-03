@@ -1,0 +1,34 @@
+.container_overflow
+  .user-cards-contents
+    %h2 カード枚数: #{@cards.length}
+    %table.table.table-borderd
+      %tr.thead-light.record__header
+        %th.record__header.name 名前
+        %th.record__header.point ポイント
+        %th.record__header.benefit ポイント特典
+        %th.record__header.benefit-used 特典使用日
+        %th.record__header.coupon クーポン
+        %th.record__header.coupon-used クーポン使用日
+      - @cards.each do |card|
+        - benefit_length = card.benefits.length
+        - coupon_length = card.coupons.length
+        - max = [benefit_length, coupon_length].max
+        - index = 0
+        - max.times do
+          %tr.record__data
+            - if index == 0
+              %td{ rowspan: "#{max}", class: "record__data name" }= link_to "#{card.user.name}", edit_admin_card_path(current_admin.id, card.id)
+              %td{ rowspan: "#{max}", class: "record__data point" } #{card.point}
+            - if card.benefits[index].present?
+              %td.record__data.benefit #{card.benefits[index].benefit_list.description}
+              %td.record__data.benefit-used #{card.benefits[index].used_date}
+            - else
+              %td.record__data
+              %td.record__data
+            - if card.coupons[index].present?
+              %td.record__data.coupon #{card.coupons[index].coupon_list.description}
+              %td.record__data.coupon-used #{card.coupons[index].used_date}
+            - else
+              %td.record__data
+              %td.record__data
+          - index += 1
