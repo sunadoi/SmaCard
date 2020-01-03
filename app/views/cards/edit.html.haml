@@ -42,7 +42,8 @@
           = form.hidden_field :admin_id, :value => @card.admin_id
           = form.hidden_field :relation_id, :value => @card.relation_id
           .card-edit__form__submit
-            = form.submit "変更", class: "form-submit btn btn-primary"
+            = form.submit "カード情報を変更", class: "form-submit btn btn-primary"
+            = link_to 'カードを削除する', user_card_path(@card.id), method: :delete, class: "card__delete btn btn-danger"
   - else
     .card-edit__alert
       %h2 カードの管理者のみ編集可能です

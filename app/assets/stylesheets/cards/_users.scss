@@ -1,0 +1,38 @@
+.user-cards-contents {
+  width: 95%;
+  margin: 0 auto;
+  h2 {
+    text-align: center;
+    margin: 5% 0;
+    font-size: calc(15px + 1vw);
+  }
+  .table {
+    font-size: 1vw;
+    .record__header {
+      padding: 0.7%;
+      .name {
+        width: 10%;
+      }
+      .point {
+        width: 10%;
+      }
+      .benefit {
+        width: 25%;
+      }
+      .benefit-used {
+        width: 18%;
+      }
+      .coupon {
+        width: 20%;
+      }
+      .coupon-used {
+        width: 18%;
+      }
+    }
+    .record__data {
+      padding: 0.7%;
+      border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+      
+    }
+  }
+}

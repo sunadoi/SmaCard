@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     collection do
       get 'top'
       get 'search'
+      get 'users'
     end
   end
 
