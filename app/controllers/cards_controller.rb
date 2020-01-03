@@ -74,11 +74,19 @@ class CardsController < ApplicationController
   def destroy
     @card.destroy
     flash[:alert] = "カードを削除しました"
-    redirect_to action: :index
+    if user_signed_in?
+      redirect_to action: :index
+    elsif admin_signed_in?
+      redirect_to users_cards_path
+    end
   end
 
   def search
     @cards = Card.search(params[:keyword])
+  end
+
+  def users
+    @cards = Card.where(admin_id: current_admin.id)
   end
 
   private
