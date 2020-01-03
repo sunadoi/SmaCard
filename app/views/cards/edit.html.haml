@@ -1,38 +1,48 @@
 .container
-  - if admin_signed_in? && current_admin.id == @card.admin_id
-    .card-edit
-      .card-info
-        = @card.user.name
-        = @card.admin.name
-        = form_with(url: user_card_path(@card.user_id, @card.id), local: true, method: :patch, class: "point-form") do |form|
-          .point-form__form-group
-            = form.label :point, "ポイント"
-            = form.text_field :point, class: "point", placeholder: "#{@card.point}", autocomplete: "off", type: "number", min: "0", required: true
-          .point-form__form-group
-            = form.label :benefit_used_date, "特典"
+  - if admin_signed_in? && (current_admin.id == @card.admin_id)
+    .card-edit-contents
+      .edit-content
+        %h2 カード情報を変更してください
+        %h3.edit-content__user カード所有者 #{@card.user.name}
+        = form_with(url: user_card_path(@card.user_id, @card.id), local: true, method: :patch, class: "card-edit__form") do |form|
+          .card-edit__form__point
+            = form.label :point, "ポイント", class: "label"
+            = form.text_field :point, class: "form-input point", placeholder: "#{@card.point}", autocomplete: "off", type: "number", min: "0", required: true
+          .card-edit__form__benefit
             - if @card.benefits.present?
-              - @card.benefits.each do |benefit|
-                .point-form__form-group__benefit
-                  = benefit.benefit_list.description
-                  = benefit.used_date
-                  = form.hidden_field :benefit_id, :value => benefit.id
-              = form.date_field :benefit_used_date, class: "benefit_used_date"
-          .point-form__form-group
-            = form.label :coupon_used_date, "クーポン"
+              %h3 ポイント特典
+              - @card.benefits.each_with_index do |benefit, index|
+                .card-edit__form__benefit__info
+                  %p #{index+1}.
+                  .card-edit__form__benefit__info__description
+                    = benefit.benefit_list.description
+                  .card-edit__form__benefit__info__date
+                    使用日: #{benefit.used_date}
+              .card-edit__form__benefit--use
+                = form.label :benefit_id, "使用する特典番号を入力してください", class: "label"
+                = form.text_field :benefit_id, class: "card-edit__form__benefit__input", autocomple: "off", type: "number", min: "1", max: "#{@card.benefits.length}"
+          .card-edit__form__coupon
             - if @card.coupons.present?
-              - @card.coupons.each do |coupon|
-                .point-form__form-group__coupon
-                  = coupon.coupon_list.description
-                  = coupon.coupon_list.expiration
-                  = coupon.used_date
-                  = form.hidden_field :coupon_id, :value => coupon.id
-              = form.date_field :coupon_used_date, class: "coupon_used_date"
+              %h3 クーポン
+              - @card.coupons.each_with_index do |coupon, index|
+                .card-edit__form__coupon__info
+                  .card-edit__form__coupon__info__upper
+                    %p #{index+1}.
+                    .card-edit__form__coupon__info__upper__description
+                      = coupon.coupon_list.description
+                    .card-edit__form__coupon__info__upper__expiration
+                      有効期限: #{coupon.coupon_list.expiration}
+                  .card-edit__form__coupon__info__lower
+                    .card-edit__form__coupon__info__date
+                      使用日: #{coupon.used_date}
+              .card-edit__form__coupon--use
+                = form.label :coupon_id, "使用する特典番号を入力してください", class: "label"
+                = form.text_field :coupon_id, class: "card-edit__form__coupon__input", autocomple: "off", type: "number", min: "1", max: "#{@card.coupons.length}"
           = form.hidden_field :user_id, :value => @card.user_id
           = form.hidden_field :admin_id, :value => @card.admin_id
           = form.hidden_field :relation_id, :value => @card.relation_id
-          .form-btn
-            = form.submit "変更", class: "btn btn-primary"
+          .card-edit__form__submit
+            = form.submit "変更", class: "form-submit btn btn-primary"
   - else
     .card-edit__alert
-      %h1 カードの管理者のみ編集可能です
-      = link_to "戻る",
+      %h2 カードの管理者のみ編集可能です
