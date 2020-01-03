@@ -1,5 +1,5 @@
 .container
-  .contents
-    .success
-      %h3 更新が完了しました
+  .success-contents
+    %h3 更新が完了しました
+    .success-contents__btn
       = link_to "カード管理画面へ戻る", admin_card_list_index_path(current_admin.id), class: "btn btn-primary"
