@@ -26,6 +26,8 @@
           -elsif admin_signed_in?
             %ul.header-contents
               - if current_admin.card_list
+                %li.header-contents__users<
+                  = link_to "ユーザー一覧", users_cards_path, class: 'btn'
                 %li.header-contents__content<
                   = link_to "カード情報", admin_card_list_index_path(current_admin.id), class: 'btn'
               -else 
