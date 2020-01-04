@@ -1,0 +1,23 @@
+version: '2'
+services:
+  app:
+    extends:
+      file: docker-compose.yml
+      service: app
+    volumes:
+      - public-data:/myproject/public
+      - tmp-data:/myproject/tmp
+      - log-data:/myproject/log
+    environment:
+      RAILS_ENV: production
+
+  web:
+    extends:
+      file: docker-compose.yml
+      service: web
+    depends_on:
+      - app
+volumes:
+  public-data:
+  tmp-data:
+  log-data:
