@@ -30,6 +30,5 @@
 /config/master.key
 
 # Ignore image file.
-public/images/*
 public/uploads/*
 spec/fixtures/*
