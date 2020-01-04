@@ -12,7 +12,7 @@ class CouponListsController < ApplicationController
     @cards.each do |card|
       @cards_coupons = CardsCoupon.create(card_id: card.id, coupon_id: @coupon.id)
     end
-    flash[:notice] = "特典を追加しました"
+    flash[:notice] = "クーポンを追加しました"
     redirect_to admin_card_list_index_path(current_admin.id)
   end
   
@@ -21,7 +21,7 @@ class CouponListsController < ApplicationController
 
   def update
     if @coupon_list.update(coupon_list_params)
-      flash[:notice] = "特典情報を変更しました"
+      flash[:notice] = "クーポン情報を変更しました"
       redirect_to admin_card_list_index_path(current_admin.id)
     else
       flash.now[:alert] = "クーポン内容を入力してください"
@@ -31,7 +31,7 @@ class CouponListsController < ApplicationController
 
   def destroy
     @coupon_list.destroy
-    flash[:notice] = "特典情報を削除しました"
+    flash[:notice] = "クーポン情報を削除しました"
     redirect_to admin_card_list_index_path(current_admin.id)
   end
 
