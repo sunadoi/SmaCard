@@ -8,7 +8,7 @@
         %li ・財布の中がカードでいっぱい
         %li ・キャッシュレス決済主体だけど、ポイントカードも持ちたい
         %li ・ポイントカードを使おうと思ったけど、忘れてきてしまった
-      .user-contents__issue__image= image_tag "/images/money_saifu_receipt_card.png"
+      .user-contents__issue__image= image_tag "https://smacard.s3-ap-northeast-1.amazonaws.com/uploads/relation/image/money_saifu_receipt_card.png"
     %p SmaCardならスマホであらゆるカードを一括管理できます
     %h2 使い方は簡単！
     .user-contents__how-to
@@ -18,7 +18,7 @@
         <br>
         %li あとはお店でQRコード読み取ってもらえば
         店員さんがポイントを付与してくれます
-      .user-contents__how-to__image= image_tag "/images/reji_kaiinsyou_smartphone.png"
+      .user-contents__how-to__image= image_tag "https://smacard.s3-ap-northeast-1.amazonaws.com/uploads/relation/image/reji_kaiinsyou_smartphone.png"
     .user-contents__sign-up.btn.btn-success
       %a{ href: "#register"} 今すぐユーザー登録！
   .admin-contents
@@ -32,7 +32,7 @@
         %li ・スマホ上でクーポンが見れるため来店率%up!
         %li ・年齢や性別など、利用した顧客の情報を取得
         &emsp;集客やマーケティングに活用できる
-      .admin-contents__merit__image= image_tag "/images/graph_up.png"
+      .admin-contents__merit__image= image_tag "https://smacard.s3-ap-northeast-1.amazonaws.com/uploads/relation/image/graph_up.png"
   %h2.register#register 登録はこちらから
   = link_to "ユーザーの方はこちら", new_user_registration_path, class: "btn btn-success"
   = link_to "管理者の方はこちら", new_admin_registration_path, class: "btn btn-warning"
