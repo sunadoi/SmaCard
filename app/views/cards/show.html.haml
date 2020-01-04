@@ -18,12 +18,11 @@
             .show-contents__middle__benefits__info
               .description
                 = benefit.benefit_list.description
-              .used-date
               - if benefit.used_date
-                .used-date--used
+                .benefit-used-date#benefit-used
                   使用済
               - else
-                .used-date--unused
+                .benefit-used-date#benefit-unused
                   未使用
       .show-contents__middle__coupons
         %h2 クーポン
@@ -35,10 +34,10 @@
               .expiration
                 有効期限: #{coupon.coupon_list.try(:expiration).try(:strftime, "%Y/%m/%d")}
               - if coupon.used_date
-                .used_date--used
+                .coupon-used-date#coupon-used
                   使用済
               - else
-                .used_date--unused
+                .coupon-used-date#coupon-unused
                   未使用
     .show-contents__lower
       %ul.show-contents__lower__info
@@ -48,3 +47,8 @@
           %li.show-contents__lower__info__tel TEL: #{@card.relation.tel}
         - if @card.relation.url
           %li.show-contents__lower__info__url URL: #{@card.relation.url}
+
+:javascript
+  $("#benefit-used").parent().attr("class", "show-contents__middle__benefits__info used");
+  $("#coupon-used").parent().attr("class", "show-contents__middle__coupons__info used");
+  $(".used").css("color", "rgba(0, 0, 0, 0.1)");
