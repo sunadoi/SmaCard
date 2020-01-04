@@ -8,18 +8,8 @@ services:
       - "4306:3306"
 
   app:
-    tty: true
-    stdin_open: true
     build: .
     command: bundle exec puma -C config/puma.rb
-    volumes:
-      - .:/myproject
-      - bundle:/usr/local/bundle
-      - public-data:/myproject/public
-      - tmp-data:/myproject/tmp
-      - log-data:/myproject/log
-    links:
-      - db
 
   web:
     build:
@@ -29,11 +19,7 @@ services:
       - tmp-data:/myproject/tmp
     ports:
       - 80:80
-    depends_on:
-      - app
 volumes:
   mysql-data:
-  bundle:
   public-data:
   tmp-data:
-  log-data:
