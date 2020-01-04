@@ -8,7 +8,10 @@
         - if @card.expiration.present?
           %li.show-contents__upper__expiration 有効期限: #{@card.expiration.strftime("%Y/%m/%d")}
       .show-contents__upper__qrcode
-        = image_tag qrcode_tag "http://localhost:3000/admins/#{@card.admin_id}/cards/#{@card.id}/edit"
+        - if ENV["RAILS_ENV"] == "development"
+          = image_tag qrcode_tag "http://localhost:3000/admins/#{@card.admin_id}/cards/#{@card.id}/edit"
+        - elsif ENV["RAILS_ENV"] == "production"
+          = image_tag qrcode_tag "http://13.112.60.229/admins/#{@card.admin_id}/cards/#{@card.id}/edit"
       = link_to '削除', user_card_path(@card.id), method: :delete, class: "show-contents__upper__delete btn btn-danger"
     .show-contents__middle
       .show-contents__middle__benefits
