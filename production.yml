@@ -4,10 +4,6 @@ services:
     extends:
       file: docker-compose.yml
       service: app
-    volumes:
-      - public-data:/myproject/public
-      - tmp-data:/myproject/tmp
-      - log-data:/myproject/log
     environment:
       RAILS_ENV: production
 
