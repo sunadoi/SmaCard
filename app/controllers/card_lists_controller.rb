@@ -29,8 +29,6 @@ class CardListsController < ApplicationController
     rescue => e 
       @card_list = CardList.new(admin_id: current_admin.id)
       @relation = Relation.new(relation_params)
-      @benefit_list = BenefitList.new(benefit_params)
-      @coupon_list = CouponList.new(coupon_params)
       flash.now[:alert] = '必要事項を入力してください。'
       render action: :new
     end

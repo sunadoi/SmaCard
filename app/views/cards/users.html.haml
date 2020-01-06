@@ -13,22 +13,31 @@
         - benefit_length = card.benefits.length
         - coupon_length = card.coupons.length
         - max = [benefit_length, coupon_length].max
-        - index = 0
-        - max.times do
+        - if max == 0
           %tr.record__data
-            - if index == 0
-              %td{ rowspan: "#{max}", class: "record__data name" }= link_to "#{card.user.name}", edit_admin_card_path(current_admin.id, card.id)
-              %td{ rowspan: "#{max}", class: "record__data point" } #{card.point}
-            - if card.benefits[index].present?
-              %td.record__data.benefit #{card.benefits[index].benefit_list.description}
-              %td.record__data.benefit-used #{card.benefits[index].used_date}
-            - else
-              %td.record__data.benefit
-              %td.record__data.benefit-used
-            - if card.coupons[index].present?
-              %td.record__data.coupon #{card.coupons[index].coupon_list.description}
-              %td.record__data.coupon-used #{card.coupons[index].used_date}
-            - else
-              %td.record__data.coupon
-              %td.record__data.coupon-used
-          - index += 1
+            %td{ class: "record__data name" }= link_to "#{card.user.name}", edit_admin_card_path(current_admin.id, card.id)
+            %td{ class: "record__data point" } #{card.point}
+            %td.record__data.benefit
+            %td.record__data.benefit-used
+            %td.record__data.coupon
+            %td.record__data.coupon-used
+        - else
+          - index = 0
+          - max.times do
+            %tr.record__data
+              - if index == 0
+                %td{ rowspan: "#{max}", class: "record__data name" }= link_to "#{card.user.name}", edit_admin_card_path(current_admin.id, card.id)
+                %td{ rowspan: "#{max}", class: "record__data point" } #{card.point}
+              - if card.benefits[index].present?
+                %td.record__data.benefit #{card.benefits[index].benefit_list.description}
+                %td.record__data.benefit-used #{card.benefits[index].used_date}
+              - else
+                %td.record__data.benefit
+                %td.record__data.benefit-used
+              - if card.coupons[index].present?
+                %td.record__data.coupon #{card.coupons[index].coupon_list.description}
+                %td.record__data.coupon-used #{card.coupons[index].used_date}
+              - else
+                %td.record__data.coupon
+                %td.record__data.coupon-used
+            - index += 1

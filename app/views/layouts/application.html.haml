@@ -17,23 +17,27 @@
             %a{ href: "/cards/top" } SmaCard
           -if user_signed_in?
             %ul.header-contents
-              %li.header-contents__content<
+              %li.header-contents__content.name
+                = "#{current_user.name} 様"
+              %li.header-contents__content
                 = link_to "マイカード", user_cards_path(current_user.id), class: 'btn'
-              %li.header-contents__content<
-                = link_to "カード一覧検索", new_user_card_path(current_user.id), class: 'btn'
-              %li.header-contents__content<
+              %li.header-contents__content
+                = link_to "カード検索", new_user_card_path(current_user.id), class: 'btn'
+              %li.header-contents__content
                 = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
           -elsif admin_signed_in?
             %ul.header-contents
               - if current_admin.card_list
-                %li.header-contents__content<
+                %li.header-contents__content.name
+                  = "#{current_admin.name} 様"
+                %li.header-contents__content
                   = link_to "ユーザー一覧", users_cards_path, class: 'btn'
-                %li.header-contents__content<
+                %li.header-contents__content
                   = link_to "カード情報", admin_card_list_index_path(current_admin.id), class: 'btn'
               -else 
-                %li.header-contents__content<
+                %li.header-contents__content
                   = link_to "カードの作成", new_admin_card_list_path(current_admin.id), class: 'btn'
-              %li.header-contents__content<
+              %li.header-contents__content
                 = link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'btn'
           -else
             %ul.header-contents
