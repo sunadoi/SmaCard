@@ -1,21 +1,25 @@
-#account-page.account-page
-  .account-page__inner.clearfix
-    .account-page__inner--left.account-page__header
-      %h2 Log in
-      %h5 登録している管理者でログイン
-      = render "admins/shared/links"
-    .account-page__inner--right.user-form
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .field
-          .field-label
-            = f.label :email
-          .field-input
-            = f.email_field :email, autofocus: true
+.container
+  #account-page.account-page
+    .account-page__inner.clearfix.row
+      .account-page__inner--left.account-page__header.col-lg-6
+        %h2 管理者ログイン
+        = render "admins/shared/links"
+        <br>
+        %h3 以下の情報でログインできます
+        %h3 Email: fuga@fuga
+        %h3 Password: fugafuga
+      .account-page__inner--right.user-form.col-lg-6
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .field
             .field-label
-              = f.label :password
-              %i (英数字8文字以上)
+              = f.label :email, "メールアドレス"
             .field-input
-              = f.password_field :password, autocomplete: "off"
-          .actions
-            = f.submit "Log in", class: 'btn'
+              = f.email_field :email, autofocus: true
+            .field
+              .field-label
+                = f.label :password, "パスワード"
+                %i (英数字8文字以上)
+              .field-input
+                = f.password_field :password, autocomplete: "off"
+            .actions
+              = f.submit "ログイン", class: 'btn'
