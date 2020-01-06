@@ -84,11 +84,16 @@ $brown-color: #2c1e0c;
       line-height: 100px;
       width: 80%;
       justify-content: flex-end;
+      .name {
+        padding-top: 1px;
+        font-size: calc(7px + 1vw);
+      }
       &__content {
-        margin-right: 2%;
+        margin-right: 3%;
         a {
+          padding: 0;
           color: white;
-          font-size: calc(10px + 1vw);
+          font-size: calc(7px + 1vw);
         }
       }
     }
