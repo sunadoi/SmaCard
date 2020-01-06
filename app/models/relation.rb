@@ -3,8 +3,8 @@ class Relation < ApplicationRecord
   belongs_to :card_list
   has_many :cards
 
-  validates :location, :opening_time, :closing_time, :image, presence: true
-  validates :name, :tel, presence: true, uniqueness: true
+  validates :name, :location, :opening_time, :closing_time, :image, presence: true
+  validates :tel, presence: true, uniqueness: true
 
   mount_uploader :image, ImageUploader
 end
