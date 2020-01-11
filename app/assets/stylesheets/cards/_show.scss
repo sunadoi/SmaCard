@@ -12,13 +12,15 @@
       &__info {
         width: 30%;
         font-size: calc(20px + 1vw);
+        &__name {
+          font-size: 2vw;
+        }
         &__point {
-          font-size: calc(10px + 1vw);
+          font-size: 2vw;
         }
       }
       &__qrcode {
-        width: 20%;
-        height: 30%;
+        width: 30%;
       }
       &__delete {
         width: 10%;
@@ -39,6 +41,14 @@
           display: flex;
           .description {
             width: 90%;
+          }
+          .benefit-used {
+            width: 15%;
+            text-align: right;
+          }
+          .benefit-unused {
+            width: 15%;
+            text-align: right;
           }
         }
       }
