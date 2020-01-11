@@ -11,7 +11,7 @@
         - if ENV["RAILS_ENV"] == "development"
           = image_tag qrcode_tag "http://localhost:3000/admins/#{@card.admin_id}/cards/#{@card.id}/edit"
         - elsif ENV["RAILS_ENV"] == "production"
-          = image_tag qrcode_tag "http://www.smacard66.com/admins/#{@card.admin_id}/cards/#{@card.id}/edit"
+          = image_tag qrcode_tag "https://www.smacard66.com/admins/#{@card.admin_id}/cards/#{@card.id}/edit"
       = link_to '削除', user_card_path(@card.id), method: :delete, class: "show-contents__upper__delete btn btn-danger"
     .show-contents__middle
       .show-contents__middle__benefits
