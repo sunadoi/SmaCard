@@ -18,9 +18,9 @@
                     = benefit.benefit_list.description
                   .card-edit__form__benefit__info__date
                     使用日: #{benefit.used_date}
-              .card-edit__form__benefit--use
+              .card-edit__form__benefit__use
                 = form.label :benefit_id, "使用する特典番号を入力してください", class: "label"
-                = form.text_field :benefit_id, class: "card-edit__form__benefit__input", autocomple: "off", type: "number", min: "1", max: "#{@card.benefits.length}"
+                = form.text_field :benefit_id, class: "card-edit__form__benefit__use__input", autocomple: "off", type: "number", min: "1", max: "#{@card.benefits.length}"
           .card-edit__form__coupon
             - if @card.coupons.present?
               %h3 クーポン
@@ -35,9 +35,9 @@
                   .card-edit__form__coupon__info__lower
                     .card-edit__form__coupon__info__date
                       使用日: #{coupon.used_date}
-              .card-edit__form__coupon--use
+              .card-edit__form__coupon__use
                 = form.label :coupon_id, "使用する特典番号を入力してください", class: "label"
-                = form.text_field :coupon_id, class: "card-edit__form__coupon__input", autocomple: "off", type: "number", min: "1", max: "#{@card.coupons.length}"
+                = form.text_field :coupon_id, class: "card-edit__form__coupon__use__input", autocomple: "off", type: "number", min: "1", max: "#{@card.coupons.length}"
           = form.hidden_field :user_id, :value => @card.user_id
           = form.hidden_field :admin_id, :value => @card.admin_id
           = form.hidden_field :relation_id, :value => @card.relation_id
