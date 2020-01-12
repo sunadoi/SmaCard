@@ -36,7 +36,7 @@
                     .card-edit__form__coupon__info__date
                       使用日: #{coupon.used_date}
               .card-edit__form__coupon__use
-                = form.label :coupon_id, "使用する特典番号を入力してください", class: "label"
+                = form.label :coupon_id, "使用するクーポン番号を入力してください", class: "label"
                 = form.text_field :coupon_id, class: "card-edit__form__coupon__use__input", autocomple: "off", type: "number", min: "1", max: "#{@card.coupons.length}"
           = form.hidden_field :user_id, :value => @card.user_id
           = form.hidden_field :admin_id, :value => @card.admin_id
