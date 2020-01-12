@@ -6,8 +6,8 @@
         = render "admins/shared/links"
         <br>
         %h3 以下の情報でログインできます
-        %h3 Email: fuga@fuga
-        %h3 Password: fugafuga
+        %h3 Email: admin@admin
+        %h3 Password: adminpass
       .account-page__inner--right.user-form.col-lg-6
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .field
