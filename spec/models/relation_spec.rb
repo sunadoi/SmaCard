@@ -17,13 +17,6 @@ describe Relation do
         expect(relation.errors[:name]).to include("を入力してください")
       end
 
-      it "is invalid with a duplicate name" do
-        relation = create(:relation)
-        another_relation = build(:relation, name: relation.name)
-        another_relation.valid?
-        expect(another_relation.errors[:name]).to include("はすでに存在します")
-      end
-
       it "is invalid without a location" do
         relation = build(:relation, location: "")
         relation.valid?
