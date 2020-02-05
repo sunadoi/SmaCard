@@ -1,13 +1,16 @@
 デモ画像
 
 <h2 align="center">SmaCard</h2>
-<a href="https://docs.docker.com/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/731612aa-8de5-3212-e0b4-7fdabea0f750.png" height="45px;" /></a>
-<a href="https://guides.rubyonrails.org/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/7a6c27cd-09cb-b9e7-7b1b-1cb56dfbee0c.png" height="45px;" /></a>
-<a href="https://aws.amazon.com/jp/aws-jp-introduction/aws-jp-webinar-service-cut/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/8bbc1eca-9bd7-b15e-56b4-12d5e39c349a.png" height="45px;" /></a>
-
+<p align="center">
+<a href="https://docs.docker.com/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/731612aa-8de5-3212-e0b4-7fdabea0f750.png" height="60px;" /></a>
+<a href="https://guides.rubyonrails.org/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/7a6c27cd-09cb-b9e7-7b1b-1cb56dfbee0c.png" height="60px;" /></a>
+<a href="https://aws.amazon.com/jp/aws-jp-introduction/aws-jp-webinar-service-cut/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/8bbc1eca-9bd7-b15e-56b4-12d5e39c349a.png" height="60px;" /></a>
+</p>
 
 ## :cloud: Infrastructure Configuration Diagram
-インフラ図
+<p align="center">
+<img width="518" alt="スクリーンショット 2020-01-09 19.39.05.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/9fdc0354-dc5c-4c13-3ecb-cd43976926e1.png">
+</p>
 
 ## :globe_with_meridians: App URL
 
