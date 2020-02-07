@@ -55,7 +55,7 @@ Caution
 - The card can't be editted by any other administrators.
 - Simultaneous login with user and administrator is forbidden.
 
-</br></br></br></br></br>
+</br></br></br></br>
 ***
 <p align="center">
 <a href="https://guides.rubyonrails.org/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/7a6c27cd-09cb-b9e7-7b1b-1cb56dfbee0c.png" height="60px;" /></a>
@@ -68,15 +68,20 @@ Caution
 <a href="https://aws.amazon.com/jp/aws-jp-introduction/aws-jp-webinar-service-cut/"><img src="https://user-images.githubusercontent.com/57832553/73935917-fec20580-4924-11ea-9b42-36715e8d4ede.png" height="60px;" /></a>
 </p>
 
+</br>
+
 ## :cloud: Infrastructure Configuration Diagram
 <p align="center">
 <img width="518" alt="スクリーンショット 2020-01-09 19.39.05.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/9fdc0354-dc5c-4c13-3ecb-cd43976926e1.png">
 </p>
 
+</br>
+
 ## :globe_with_meridians: App URL
 
 ### **https://www.smacard66.com/cards/top**  
 
+</br>
 
 ## :speech_balloon: Installation
 
@@ -89,11 +94,13 @@ $ docker-compose run --rm app rails db:migrate
 $ docker-compose -f development.yml up -d
 ```
 
+</br>
 
 ## :eyes: E-R Diagram
 
 <img width="884" alt="スクリーンショット 2020-02-03 16.11.18.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/7dace54c-a636-d9f4-4c05-68fc6f1791a4.png">
 
+</br>
 
 ## :smile: Author
 - <a href="https://github.com/sunadoi/card_management">Github</a>
