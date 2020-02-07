@@ -41,13 +41,11 @@ How to read QR-code
 
 </br>
 
-***For iPhone***
-
+***For iPhone***</br>
 camera application(only iOS11 or later)
 
 
-***For Android***
-
+***For Android***</br>
 Operation check was done with only "QRコードスキャナー" application.
 
 
