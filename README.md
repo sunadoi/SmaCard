@@ -1,5 +1,8 @@
 # SmaCard
 Application for managing point-cards and coupons
+<p align="center">
+<img width="483" alt="スクリーンショット 2020-02-07 16 24 24" src="https://user-images.githubusercontent.com/57832553/74009358-5795aa80-49c6-11ea-8fa6-76b178cb71e8.png">
+</p>
 
 ## :memo:　Description
 SmaCard is management tool for point-cards and coupons.
