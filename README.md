@@ -11,12 +11,12 @@ SmaCard is management tool for point-cards and coupons.
 
 <p>
   <img width="350" alt="スクリーンショット 2020-02-07 14 28 44" src="https://user-images.githubusercontent.com/57832553/74003545-4d6bb000-49b6-11ea-961b-704dd43f57b2.png">
-  <img width="350" align="right" alt="スクリーンショット 2020-02-07 14 28 02" src="https://user-images.githubusercontent.com/57832553/74003543-4c3a8300-49b6-11ea-82f6-915ec2a6e3dd.png">
+  <img width="350" align="right" alt="スクリーンショット 2020-02-07 14 28 02" src="https://user-images.githubusercontent.com/57832553/74008596-9a568300-49c4-11ea-9dc4-23ea9b80b328.png">
 </p>
 
 <h3 align="center">Administrator Screen</h3>
 <p align="center">
-<img width="350" alt="スクリーンショット 2020-02-07 14 27 07" src="https://user-images.githubusercontent.com/57832553/74008178-94ac6d80-49c3-11ea-8c6f-f803b981fb8d.png">
+<img width="350" alt="スクリーンショット 2020-02-07 14 27 07" src="https://user-images.githubusercontent.com/57832553/74008604-9e82a080-49c4-11ea-9149-b6d814aa3cfb.png">
 </p>
 
 ***DEMO:***
