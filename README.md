@@ -1,3 +1,9 @@
+# SmaCard
+Application for managing point-cards and coupons
+
+## :memo:　Description
+
+
 <h3 align="center">User Screen</h3>
 
 <p>
@@ -10,7 +16,7 @@
 <img width="350" alt="スクリーンショット 2020-02-07 14 27 07" src="https://user-images.githubusercontent.com/57832553/74003540-49d82900-49b6-11ea-99f5-3ab0209a2017.png">
 </p>
 
-
+***DEMO:***
 
 
 <h1 align="center">SmaCard</h1>
