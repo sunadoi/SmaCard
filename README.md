@@ -35,7 +35,7 @@ SmaCard is management tool for point-cards and coupons.
 
 4. Edit points, usage situation of point benefits and coupons.
 
-
+</br>
 :white_check_mark:
 How to read QR-code
 
