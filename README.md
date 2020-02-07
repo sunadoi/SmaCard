@@ -1,12 +1,9 @@
-
 <h3 align="center">User Screen</h3>
 
 <p>
   <img width="350" alt="スクリーンショット 2020-02-07 14 28 44" src="https://user-images.githubusercontent.com/57832553/74003545-4d6bb000-49b6-11ea-961b-704dd43f57b2.png">
   <img width="350" align="right" alt="スクリーンショット 2020-02-07 14 28 02" src="https://user-images.githubusercontent.com/57832553/74003543-4c3a8300-49b6-11ea-82f6-915ec2a6e3dd.png">
 </p>
-
-</br>
 
 <h3 align="center">Administrator Screen</h3>
 <p align="center">
@@ -16,7 +13,7 @@
 
 
 
-<h2 align="center">SmaCard</h2>
+<h1 align="center">SmaCard</h1>
 <p align="center">
 <a href="https://guides.rubyonrails.org/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/7a6c27cd-09cb-b9e7-7b1b-1cb56dfbee0c.png" height="60px;" /></a>
 </p>
@@ -40,17 +37,14 @@
 
 ## :speech_balloon: Usage
 
-`$ git clone https://github.com/sunadoi/card_management.git`
-
-`$ cd card_management`  
-
-`$ docker-compose build`
-
-`$ docker-compose run --rm app rails db:create`
-
-`$ docker-compose run --rm app rails db:migrate`
-
-`$ docker-compose -f development.yml up -d`
+```
+$ git clone https://github.com/sunadoi/card_management.git
+$ cd card_management
+$ docker-compose build
+$ docker-compose run --rm app rails db:create
+$ docker-compose run --rm app rails db:migrate
+$ docker-compose -f development.yml up -d
+```
 
 
 ## :eyes: E-R Diagram
