@@ -7,14 +7,14 @@ SmaCard is management tool for point-cards and coupons.
 - Administrator can edit each user's card information via reading QR-code.
 - Thanks to QR-code, administrator can edit simply and directly!
 
-<h3 align="center">User Screen</h3>
+<h3 align="center">:smiley: User Screen</h3>
 
 <p>
   <img width="350" alt="スクリーンショット 2020-02-07 14 28 44" src="https://user-images.githubusercontent.com/57832553/74003545-4d6bb000-49b6-11ea-961b-704dd43f57b2.png">
   <img width="350" align="right" alt="スクリーンショット 2020-02-07 14 28 02" src="https://user-images.githubusercontent.com/57832553/74008596-9a568300-49c4-11ea-9dc4-23ea9b80b328.png">
 </p>
 
-<h3 align="center">Administrator Screen</h3>
+<h3 align="center">:sunglasses: Administrator Screen</h3>
 <p align="center">
 <img width="350" alt="スクリーンショット 2020-02-07 14 27 07" src="https://user-images.githubusercontent.com/57832553/74008604-9e82a080-49c4-11ea-9149-b6d814aa3cfb.png">
 </p>
