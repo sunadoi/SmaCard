@@ -39,7 +39,7 @@ SmaCard is management tool for point-cards and coupons.
 :white_check_mark:
 How to read QR-code
 
-</br></br>
+</br>
 
 ***For iPhone***
 
