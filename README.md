@@ -19,7 +19,7 @@ SmaCard is management tool for point-cards and coupons.
 
 <h3 align="center">:sunglasses: Administrator Screen</h3>
 <p align="center">
-<img width="700" alt="test" src="https://user-images.githubusercontent.com/57832553/74010765-911be500-49c9-11ea-82d3-6f19ecbbeb69.png">
+<img width="700" alt="test2" src="https://user-images.githubusercontent.com/57832553/74011138-67af8900-49ca-11ea-816a-c976bfad5f43.png">
 </p>
 
 ***DEMO:***
