@@ -26,6 +26,7 @@ SmaCard is management tool for point-cards and coupons.
 
 <img align="right" alt="test2" src="https://user-images.githubusercontent.com/57832553/74041415-ef1bed00-4a08-11ea-8927-968bb2eb91a4.GIF">
 
+</br>
 
 1. Start camera application(iOS11 or later) or QR-code reader application.
 
@@ -39,8 +40,6 @@ SmaCard is management tool for point-cards and coupons.
 :white_check_mark:
 How to read QR-code
 
-</br>
-
 ***For iPhone***</br>
 camera application(only iOS11 or later)
 
@@ -48,10 +47,13 @@ camera application(only iOS11 or later)
 ***For Android***</br>
 Operation check was done with only "QRコードスキャナー" application.
 
+:warning:
+Caution
 
+- The card can't be editted by any other administrators.
+- Simultaneous login with user and administrator is forbidden.
 
-
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+</br></br></br></br></br></br></br></br>
 <h1 align="center">SmaCard</h1>
 <p align="center">
 <a href="https://guides.rubyonrails.org/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/7a6c27cd-09cb-b9e7-7b1b-1cb56dfbee0c.png" height="60px;" /></a>
