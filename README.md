@@ -53,7 +53,7 @@ Caution
 - The card can't be editted by any other administrators.
 - Simultaneous login with user and administrator is forbidden.
 
-</br></br></br></br></br></br></br></br>
+</br></br></br></br></br>
 <h1 align="center">SmaCard</h1>
 <p align="center">
 <a href="https://guides.rubyonrails.org/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/7a6c27cd-09cb-b9e7-7b1b-1cb56dfbee0c.png" height="60px;" /></a>
