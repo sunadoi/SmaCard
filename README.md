@@ -49,13 +49,15 @@ camera application(only iOS11 or later)
 ***For Android***</br>
 Operation check was done with only "QRコードスキャナー" application.
 
+</br>
+
 :warning:
 Caution
 
 - Administrator can edit only his or her own cards.
 - Simultaneous login with user and administrator is forbidden.
 
-</br></br></br></br>
+</br></br></br>
 ***
 <p align="center">
 <a href="https://guides.rubyonrails.org/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/7a6c27cd-09cb-b9e7-7b1b-1cb56dfbee0c.png" height="60px;" /></a>
