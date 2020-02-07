@@ -24,7 +24,7 @@ SmaCard is management tool for point-cards and coupons.
 </p>
 
 </br>
-<h3 align="center">:movie_camera: DEMO</h3>
+<h3 align="center">:movie_camera: Demo and Usage</h3>
 
 <img align="right" alt="test2" src="https://user-images.githubusercontent.com/57832553/74041415-ef1bed00-4a08-11ea-8927-968bb2eb91a4.GIF">
 
