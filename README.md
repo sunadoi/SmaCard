@@ -35,7 +35,7 @@
 ### **https://www.smacard66.com/cards/top**  
 
 
-## :speech_balloon: Usage
+## :speech_balloon: Installation
 
 ```
 $ git clone https://github.com/sunadoi/card_management.git
