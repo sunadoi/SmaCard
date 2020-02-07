@@ -1,8 +1,8 @@
 <p>
   <img width="350" alt="スクリーンショット 2020-02-07 14 28 44" src="https://user-images.githubusercontent.com/57832553/74003545-4d6bb000-49b6-11ea-961b-704dd43f57b2.png">
-  <img width="100" alt="スクリーンショット 2020-02-07 14 46 34" src="https://user-images.githubusercontent.com/57832553/74004279-adfbec80-49b8-11ea-8fb0-cf52fb296a12.png">
 
-  <img width="350" alt="スクリーンショット 2020-02-07 14 28 02" src="https://user-images.githubusercontent.com/57832553/74003543-4c3a8300-49b6-11ea-82f6-915ec2a6e3dd.png">
+
+  <img width="350" align="right" alt="スクリーンショット 2020-02-07 14 28 02" src="https://user-images.githubusercontent.com/57832553/74003543-4c3a8300-49b6-11ea-82f6-915ec2a6e3dd.png">
 </p>
 <p align="center">
 <img width="350" alt="スクリーンショット 2020-02-07 14 27 07" src="https://user-images.githubusercontent.com/57832553/74003540-49d82900-49b6-11ea-99f5-3ab0209a2017.png">
