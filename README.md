@@ -1,4 +1,4 @@
-<p align="justy">
+<p>
   <img width="350" alt="スクリーンショット 2020-02-07 14 28 44" src="https://user-images.githubusercontent.com/57832553/74003545-4d6bb000-49b6-11ea-961b-704dd43f57b2.png">
 
   <img width="350" alt="スクリーンショット 2020-02-07 14 28 02" src="https://user-images.githubusercontent.com/57832553/74003543-4c3a8300-49b6-11ea-82f6-915ec2a6e3dd.png">
