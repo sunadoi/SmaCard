@@ -30,13 +30,13 @@ SmaCard is management tool for point-cards and coupons.
 
 </br>
 
-1. Start camera application(iOS11 or later) or QR-code reader application.
+1. Start camera application(iOS11 or later) or QR-code reader application
 
 2. Read QR-code that user presented
   
-3. Access to url while logged in as an administrator.
+3. Access to url while logged in as an administrator
 
-4. Edit points, usage situation of point benefits and coupons.
+4. Edit points, usage situation of point benefits and coupons
 
 </br>
 :white_check_mark:
@@ -52,7 +52,7 @@ Operation check was done with only "QRコードスキャナー" application.
 :warning:
 Caution
 
-- The card can't be editted by any other administrators.
+- Administrator can edit only his or her own cards.
 - Simultaneous login with user and administrator is forbidden.
 
 </br></br></br></br>
