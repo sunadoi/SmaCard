@@ -33,15 +33,22 @@ SmaCard is management tool for point-cards and coupons.
   
 3. Access to url while logged in as an administrator.
 
-4. Edit points, point benefits, and point coupons.
+4. Edit points, usage situation of point benefits and coupons.
 
 
 :white_check_mark:
 How to read QR-code
 
-For iPhone
+***For iPhone***
 
-camera application
+camera application(only iOS11 or later)
+
+
+***For Android***
+
+Operation check was done with only "QRコードスキャナー" application.
+
+
 
 
 </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
