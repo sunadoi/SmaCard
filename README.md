@@ -1,6 +1,5 @@
 
-<h3 align="center">User Screen</h3>
-
+<h3 align="center"><span style="color: red; ">User Screen</span></h3>
 
 <p>
   <img width="350" alt="スクリーンショット 2020-02-07 14 28 44" src="https://user-images.githubusercontent.com/57832553/74003545-4d6bb000-49b6-11ea-961b-704dd43f57b2.png">
