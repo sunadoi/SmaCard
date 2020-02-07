@@ -2,7 +2,10 @@
 Application for managing point-cards and coupons
 
 ## :memo:　Description
-
+SmaCard is management tool for point-cards and coupons.
+- User can add favorite cards from card list display, and manage what points each card has.
+- Administrator can edit each user's card information via reading QR-code.
+- Thanks to QR-code, administrator can edit simply and directly.
 
 <h3 align="center">User Screen</h3>
 
@@ -13,7 +16,7 @@ Application for managing point-cards and coupons
 
 <h3 align="center">Administrator Screen</h3>
 <p align="center">
-<img width="350" alt="スクリーンショット 2020-02-07 14 27 07" src="https://user-images.githubusercontent.com/57832553/74003540-49d82900-49b6-11ea-99f5-3ab0209a2017.png">
+<img width="350" alt="スクリーンショット 2020-02-07 14 27 07" src="https://gyazo.com/e8722f5f2315cd08eb68b9361ca82424">
 </p>
 
 ***DEMO:***
