@@ -10,6 +10,7 @@ SmaCard is management tool for point-cards and coupons.
 - Administrator can edit each user's card information via reading QR-code.
 - Thanks to QR-code, administrator can edit simply and directly!
 
+</br>
 <h3 align="center">:smiley: User Screen</h3>
 
 <p>
@@ -22,6 +23,7 @@ SmaCard is management tool for point-cards and coupons.
 <img width="700" alt="test2" src="https://user-images.githubusercontent.com/57832553/74011138-67af8900-49ca-11ea-816a-c976bfad5f43.png">
 </p>
 
+</br>
 <h3 align="center">:movie_camera: DEMO</h3>
 
 <img align="right" alt="test2" src="https://user-images.githubusercontent.com/57832553/74041415-ef1bed00-4a08-11ea-8927-968bb2eb91a4.GIF">
@@ -54,7 +56,7 @@ Caution
 - Simultaneous login with user and administrator is forbidden.
 
 </br></br></br></br></br>
-<h1 align="center">SmaCard</h1>
+***
 <p align="center">
 <a href="https://guides.rubyonrails.org/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/7a6c27cd-09cb-b9e7-7b1b-1cb56dfbee0c.png" height="60px;" /></a>
 </p>
