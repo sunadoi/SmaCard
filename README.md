@@ -94,6 +94,7 @@ $ docker-compose build
 $ docker-compose run --rm app rails db:create
 $ docker-compose run --rm app rails db:migrate
 $ docker-compose -f development.yml up -d
+👉http://localhost/
 ```
 
 </br>
