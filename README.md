@@ -109,3 +109,4 @@ $ docker-compose -f development.yml up -d
 - <a href="https://github.com/sunadoi/card_management">Github</a>
 - <a href="https://twitter.com/suna_tech">Twitter</a>
 - <a href="https://qiita.com/y-suna">Qiita</a>
+- <a href="https://note.com/sunadoi">note</a>
