@@ -72,6 +72,12 @@ Caution
 
 </br>
 
+## :star: Features
+- Many Pull requests were made like team development
+- Coverage report generated for RSpec to /myproject/coverage. 711 / 777 LOC (91.51%) covered.
+
+</br>
+
 ## :cloud: Infrastructure Configuration Diagram
 <p align="center">
 <img width="518" alt="スクリーンショット 2020-01-09 19.39.05.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/9fdc0354-dc5c-4c13-3ecb-cd43976926e1.png">
