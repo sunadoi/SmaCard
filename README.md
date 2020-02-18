@@ -36,7 +36,7 @@ SmaCard is management tool for point-cards and coupons.
   
 3. Access to url while logged in as an administrator
 
-4. Edit points, usage situation of point benefits and coupons
+4. Edit points and usage situation of point benefits and coupons
 
 </br>
 :white_check_mark:
@@ -94,7 +94,7 @@ Caution
 ## :speech_balloon: Installation
 
 ```
-$ git clone https://github.com/sunadoi/card_management.git
+$ git clone https://github.com/sunadoi/SmaCard.git
 $ cd card_management
 $ docker-compose build
 $ docker-compose run --rm app rails db:create
