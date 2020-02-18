@@ -94,7 +94,7 @@ Caution
 ## :speech_balloon: Installation
 
 ```
-$ git clone https://github.com/sunadoi/SmaCard.git
+$ git clone https://github.com/sunadoi/card_management.git
 $ cd card_management
 $ docker-compose build
 $ docker-compose run --rm app rails db:create
