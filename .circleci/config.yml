@@ -66,7 +66,7 @@ jobs:
           name: install dependencies
           command: |
             gem install bundler -v 1.16.6
-            bundle 1.16.6 install --jobs=4 --retry=3 --path vendor/bundle
+            bundle _1.16.6_ install --jobs=4 --retry=3 --path vendor/bundle
 
       - save_cache:
           paths:
