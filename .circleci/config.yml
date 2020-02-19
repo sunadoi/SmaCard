@@ -4,6 +4,7 @@ jobs:
     # docker-composeがインストール済みの仮想マシンをプル
     machine:
       image: circleci/classic:edge
+    working_directory: ~/card_management
     steps:
       - checkout
       - run:
