@@ -46,7 +46,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'faker'
-  gem 'simplecov'
+  # gem 'simplecov'
 end
 
 group :development do
@@ -77,3 +77,5 @@ gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+
+gem 'rspec_junit_formatter'
