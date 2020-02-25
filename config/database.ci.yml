@@ -3,6 +3,6 @@ test:
   encoding: utf8
   host: db
   username: root
-  password: password
+  password: 
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: card_management_test
