@@ -15,7 +15,7 @@ jobs:
           command: docker-compose -f test.yml up -d
       - run:
           name: データベースのセットアップ
-          command: docker-compose run app --rm rails db:create db:migrate RAILS_ENV=test --trace
+          command: docker-compose run app rails db:create db:migrate RAILS_ENV=test --trace
       - run:
           name: RSpecテスト実行
           command: docker-compose run app bundle exec bin/rspec
