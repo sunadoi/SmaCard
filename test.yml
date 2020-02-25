@@ -17,7 +17,7 @@ services:
       - public-data:/myproject/public
       - tmp-data:/myproject/tmp
       - log-data:/myproject/log
-    depends_on:
+    links:
       - db
     environment:
       RAILS_ENV: test
