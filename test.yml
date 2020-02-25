@@ -20,7 +20,7 @@ services:
     links:
       - db
     environment:
-      RAILS_ENV: test
+      RAILS_ENV: development
 
   web:
     extends:
