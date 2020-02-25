@@ -8,16 +8,16 @@ jobs:
     steps:
       - checkout
       - run:
+          name: database.ymlの再設定
+          command: |
+            rm ./config/database.yml
+            mv ./config/database.ci.yml ./config/database.yml
+      - run:
           name: Dockerコンテナのビルド
           command: docker-compose build
       - run:
           name: Dockerコンテナの起動
           command: docker-compose -f test.yml up -d
-      - run:
-          name: database.ymlの再設定
-          command: |
-            rm ./config/database.yml
-            mv ./config/database.ci.yml ./config/database.yml
       - run:
           name: データベースのセットアップ
           command: docker-compose run app rails db:create db:migrate RAILS_ENV=test --trace
