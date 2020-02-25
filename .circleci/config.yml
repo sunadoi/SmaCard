@@ -8,6 +8,14 @@ jobs:
     steps:
       - checkout
       - run:
+          name: dockerize をインストール
+          command: wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && sudo tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+          environment:
+            DOCKERIZE_VERSION: v0.3.0
+      - run:
+          name: db を待機
+          command: dockerize -wait tcp://localhost:3306 -timeout 1m
+      - run:
           name: database.ymlの再設定
           command: |
             rm ./config/database.yml
@@ -20,7 +28,7 @@ jobs:
           command: docker-compose -f test.yml up -d
       - run:
           name: データベースのセットアップ
-          command: docker-compose run app rails db:create RAILS_ENV=test --trace
+          command: docker-compose run app rails db:create db:migrate RAILS_ENV=test --trace
       - run:
           name: RSpecテスト実行
           command: docker-compose run app bundle exec bin/rspec
