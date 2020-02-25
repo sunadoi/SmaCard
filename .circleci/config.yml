@@ -14,7 +14,7 @@ jobs:
             DOCKERIZE_VERSION: v0.3.0
       - run:
           name: db を待機
-          command: dockerize -wait tcp://localhost:3306 -timeout 1m
+          command: dockerize -wait tcp://localhost:4306 -timeout 1m
       - run:
           name: database.ymlの再設定
           command: |
