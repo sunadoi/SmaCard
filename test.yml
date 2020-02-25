@@ -9,18 +9,15 @@ services:
     extends:
       file: docker-compose.yml
       service: app
-    tty: true
-    stdin_open: true
     volumes:
       - .:/myproject
-      - bundle:/usr/local/bundle
       - public-data:/myproject/public
       - tmp-data:/myproject/tmp
       - log-data:/myproject/log
     links:
       - db
     environment:
-      RAILS_ENV: development
+      RAILS_ENV: test
 
   web:
     extends:
@@ -30,7 +27,6 @@ services:
       - app
 volumes:
   mysql-data:
-  bundle:
   public-data:
   tmp-data:
   log-data:
