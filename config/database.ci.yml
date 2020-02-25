@@ -4,5 +4,5 @@ test:
   host: db
   username: root
   password: 
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
   database: card_management_test
