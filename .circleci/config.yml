@@ -11,7 +11,7 @@ jobs:
           name: database.ymlの再設定
           command: |
             rm ./config/database.yml
-            mv ./config/database.ci.yml ./config/database.yml
+            cp ./config/database.ci.yml ./config/database.yml
       - run:
           name: Dockerコンテナのビルド
           command: docker-compose build
