@@ -91,20 +91,6 @@ Caution
 
 </br>
 
-## :speech_balloon: Installation
-
-```
-$ git clone https://github.com/sunadoi/card_management.git
-$ cd card_management
-$ docker-compose build
-$ docker-compose run --rm app rails db:create
-$ docker-compose run --rm app rails db:migrate
-$ docker-compose -f development.yml up -d
-👉http://localhost/
-```
-
-</br>
-
 ## :eyes: E-R Diagram
 
 <img width="884" alt="スクリーンショット 2020-02-03 16.11.18.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/7dace54c-a636-d9f4-4c05-68fc6f1791a4.png">
